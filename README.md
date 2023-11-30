@@ -1,4 +1,5 @@
-# MinderaMurderMysteryOnce upon a time, in a small town nestled between rolling hills and serene meadows, there lived two souls whose lives were destined to intertwine in the most enchanting way.
+# MinderaMurderMystery
+Once upon a time, in a small town nestled between rolling hills and serene meadows, there lived two souls whose lives were destined to intertwine in the most enchanting way.
 
 Evelyn, with her laughter that could light up the darkest of days, was known for her kindness that radiated like the sun's warmth. Her days were spent nurturing the flowers in her garden, painting the sky with vibrant strokes of colors, and tending to the needs of her neighbors.
 
