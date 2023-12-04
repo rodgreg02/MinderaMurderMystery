@@ -1,4 +1,4 @@
 package Rooms;
 
-public enum RoomsCards {
+enum RoomsCards {
 }
