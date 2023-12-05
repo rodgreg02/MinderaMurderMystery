@@ -5,7 +5,11 @@ import java.util.Scanner;
 
 public class Game {
 
-    static Scanner scan = new Scanner(System.in);
+    Menu menu = new Menu();
+
+    public void startGame(){
+        menu.mainMenu();
+    }
 
     static ArrayList<Weapons> weapons = Weapons.CreateWeapons();
 
@@ -20,33 +24,7 @@ public class Game {
         System.out.println(weapons.get(valueRandom).getWeaponName());
     }
 
-        public static void mainMenu () {
-            Scanner scan = new Scanner(System.in);
-            boolean quitGame = false;
-            while (!quitGame) {
-                System.out.println("==== Welcome to MurderMistery Game ====");
-                System.out.println("1 => Play");
-                System.out.println("2 => Exit");
-                String option = scan.next();
-                if (option.equals("1")) {
-                    gameMenu();
-                }
-                if (option.equals("2")) {
-                    quitGame = true;
-                }
-                if (!option.equals("1") && !option.equals("2")) {
-                    System.out.println("Invalid Input");
-                }
-            }
-        }
 
-
-        private static void gameMenu () {
-            System.out.println("Insert the name of your detective: ");
-            String detectiveName = scan.next();
-            Player player = new Player(detectiveName);
-            Story.startStory(player);
-        }
 
 
 }
