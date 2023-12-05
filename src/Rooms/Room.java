@@ -30,7 +30,6 @@ public class Room {
         rooms[7] = office;
         Room pool = new Room("Pool");
         rooms[8] = pool;
-
         return rooms;
     }
 
