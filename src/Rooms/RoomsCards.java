@@ -1,4 +1,0 @@
-package Rooms;
-
-enum RoomsCards {
-}
