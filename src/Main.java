@@ -1,12 +1,12 @@
-import Weapons.Weapons;
+import Characters.Characters;
+
+import java.util.ArrayList;
 
 public class Main {
+    static ArrayList<Characters> arrayListSuspects = Characters.createCharacters();
     public static void main(String[] args) {
-        //Story.startStory();
-        //Story.goodEnding();
-        //Story.badEnding();
 
-        Weapons Weapons = new Weapons();
-        Weapons.showWeaponArray();
+        System.out.println(arrayListSuspects.get(2).getName());
+
     }
 }
