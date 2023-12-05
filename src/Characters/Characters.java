@@ -6,14 +6,15 @@ public class Characters {
     String name;
     String tipGuilty;
     String tipNotGuilty;
-    boolean tipUsed;
+    boolean suspectFound;
 
-    public Characters(String name, String tipGuilty, String tipNotGuilty, boolean tipUsed) {
+    public Characters(String name, String tipGuilty, String tipNotGuilty, boolean suspectFound) {
         this.name = name;
         this.tipGuilty = tipGuilty;
         this.tipNotGuilty = tipNotGuilty;
-        this.tipUsed = tipUsed;
+        this.suspectFound = false;
     }
+
 
     public String getName() {
         return name;
@@ -28,11 +29,11 @@ public class Characters {
     }
 
     public boolean isTipUsed() {
-        return tipUsed;
+        return suspectFound;
     }
 
     public void setTipUsed(boolean tipUsed) {
-        this.tipUsed = tipUsed;
+        this.suspectFound = tipUsed;
     }
     //-------------------------
 
