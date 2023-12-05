@@ -1,9 +1,23 @@
-import java.util.Scanner;
+import Weapons.Weapons;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Game {
+    static ArrayList<Weapons> weapons = Weapons.CreateWeapons();
 
-    Scanner scan = new Scanner(System.in);
-    public void mainMenu(){
+    static int StandardRandom(int numRandom) {
+        Random random = new Random();
+        return random.nextInt(numRandom);
+    }
+
+    static void chooseRandomWeaponKill() {
+        int valueRandom = (Game.StandardRandom(6));
+        weapons.get(valueRandom).setWasUsedToKill(true);
+        System.out.println(weapons.get(valueRandom).getWeaponName());
+
+    
+    public static void mainMenu(){
+      Scanner scan = new Scanner(System.in);
         boolean quitGame = false;
         while (!quitGame) {
             System.out.println("==== Welcome to MurderMistery Game ====");
@@ -25,12 +39,11 @@ public class Game {
 
 
 
-    private void gameMenu(){
+    private static void gameMenu(){
         System.out.println("Insert the name of your detective: ");
         String detectiveName = scan.next();
         Player player = new Player(detectiveName);
         Story.startStory(player);
-
     }
 
 
