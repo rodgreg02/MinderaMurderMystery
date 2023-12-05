@@ -44,14 +44,14 @@ public class Characters {
         Characters Francisco = new Characters("Francisco", "Guilty", "Not Guilty", false);
         Characters Fatima = new Characters("Fátima", "Guilty", "Not Guilty", false);
         Characters Paulo = new Characters("Paulo", "Guilty", "Not Guilty", false);
-        Characters Gabi = new Characters("Gabi", "Guilty", "Not Gilty", false);
+        Characters David = new Characters("David", "Guilty", "Not Gilty", false);
         Characters Rodrigo = new Characters("Rodrigo", "Guilty", "Not Guilty", false);
 
         suspects.add(Bruna);
         suspects.add(Francisco);
         suspects.add(Fatima);
         suspects.add(Paulo);
-        suspects.add(Gabi);
+        suspects.add(David);
         suspects.add(Rodrigo);
 
         return suspects;
