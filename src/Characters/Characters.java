@@ -37,9 +37,9 @@ public class Characters {
     }
     //-------------------------
 
-    static ArrayList<Characters> suspects = new ArrayList<>();
-
     public static ArrayList<Characters> createCharacters() {
+        ArrayList<Characters> suspects = new ArrayList<>();
+
         Characters Bruna = new Characters("Bruna", "Guilty", "Not Guilty", false);
         Characters Francisco = new Characters("Francisco", "Guilty", "Not Guilty", false);
         Characters Fatima = new Characters("Fátima", "Guilty", "Not Guilty", false);
