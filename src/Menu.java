@@ -1,30 +1,10 @@
-import Weapons.Weapons;
-import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
-public class Game {
-static Scanner scan = new Scanner(System.in);
-    Menu menu = new Menu();
+public class Menu {
 
-    public void startGame(){
-        menu.mainMenu();
-    }
+    Scanner scan = new Scanner(System.in);
 
-    static ArrayList<Weapons> weapons = Weapons.CreateWeapons();
-
-    static int StandardRandom(int numRandom) {
-        Random random = new Random();
-        return random.nextInt(numRandom);
-    }
-
-    static void chooseRandomWeaponKill() {
-        int valueRandom = (Game.StandardRandom(6));
-        weapons.get(valueRandom).setWasUsedToKill(true);
-        System.out.println(weapons.get(valueRandom).getWeaponName());
-    }
-
-    public static void mainMenu () {
+    public void mainMenu () {
         Scanner scan = new Scanner(System.in);
         boolean quitGame = false;
         while (!quitGame) {
@@ -45,12 +25,10 @@ static Scanner scan = new Scanner(System.in);
     }
 
 
-    private static void gameMenu () {
+    private void gameMenu () {
         System.out.println("Insert the name of your detective: ");
         String detectiveName = scan.next();
         Player player = new Player(detectiveName);
         Story.startStory(player);
     }
-
-
 }
