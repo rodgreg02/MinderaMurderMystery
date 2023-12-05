@@ -1,12 +1,12 @@
-import Weapons.AddWeapons;
+import Weapons.Weapons;
 
 public class Main {
     public static void main(String[] args) {
         //Story.startStory();
         //Story.goodEnding();
-        //Story.baddEnding();
+        //Story.badEnding();
 
-        AddWeapons addWeapons = new AddWeapons();
-        addWeapons.showWeaponArray();
+        Weapons Weapons = new Weapons();
+        Weapons.showWeaponArray();
     }
 }

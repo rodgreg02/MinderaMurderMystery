@@ -15,7 +15,7 @@ public class Story {
     static void goodEnding(){
         System.out.println("\tGraças a ti a policia encontrou o assassino, a arma, e o local do crime.");
     }
-    static void baddEnding(){
+    static void badEnding(){
         System.out.println("\tPor tua causa policia prendeu uma pessoa inocente.");
         System.out.println("\tO verdadeiro culpado matou-o na piscina da casa.");
     }

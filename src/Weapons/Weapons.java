@@ -1,7 +1,7 @@
 package Weapons;
 
 
-public class AddWeapons {
+public class Weapons {
     String[] cardsOfWeapons = {
             WeaponCards.WEAPON_PISTOL.getWeaponName(),
             WeaponCards.WEAPON_KNIFE.getWeaponName(),
