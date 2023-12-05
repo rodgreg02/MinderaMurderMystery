@@ -7,6 +7,7 @@ public class Main {
         //Story.badEnding();
 
         Weapons Weapons = new Weapons();
+        System.out.println("asdada");
         Weapons.showWeaponArray();
     }
 }
