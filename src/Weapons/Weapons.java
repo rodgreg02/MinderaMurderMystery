@@ -51,8 +51,7 @@ public class Weapons {
         return arrayListWeapons;
     }
 
-    public void Update(String weaponName, boolean wasUsedToKill) {
-        this.weaponName = weaponName;
+    public void setWasUsedToKill(boolean wasUsedToKill) {
         this.wasUsedToKill = wasUsedToKill;
     }
 }
