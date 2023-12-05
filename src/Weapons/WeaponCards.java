@@ -6,7 +6,7 @@ enum WeaponCards {
     WEAPON_ROPE(2, "ROPE","Esta tão desgastada"),
     WEAPON_CHANDELIER(3, "CHANDELIER","Esta sem cera"),
     WEAPON_PIPE(4, "PIPE","Nota-se que esta bastante dobrado"),
-    WEAPON_TOOL(5, "HAMMER","Porque que este martelo tem uma parte vermelha?"),
+    WEAPON_TOOL(5, "HAMMER","Porque que este martelo ta vermelho?"),
     ;
     private final String weaponName;
     private final int index;
