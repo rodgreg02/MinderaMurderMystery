@@ -2,11 +2,12 @@ import Weapons.Weapons;
 
 public class Main {
     public static void main(String[] args) {
-        //Story.startStory();
-        //Story.goodEnding();
-        //Story.badEnding();
 
-        Weapons Weapons = new Weapons();
-        Weapons.showWeaponArray();
+        for (int i = 0; i < 6; i++) {
+            System.out.println(Weapons.CreateWeapons().get(i).getWeaponName());
+            System.out.println(Weapons.CreateWeapons().get(i).getTipSus());
+            System.out.println(Weapons.CreateWeapons().get(i).getTipNonSus());
+            System.out.println(Weapons.CreateWeapons().get(i).wasUsedToKill());
+        }
     }
 }
