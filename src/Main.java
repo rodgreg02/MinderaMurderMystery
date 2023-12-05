@@ -5,8 +5,9 @@ public class Main {
         //Story.startStory();
         //Story.goodEnding();
         //Story.badEnding();
-
+       // Game game = new Game();
         Weapons Weapons = new Weapons();
         Weapons.showWeaponArray();
+       // game.mainMenu();
     }
 }
