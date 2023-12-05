@@ -40,12 +40,23 @@ public class Characters {
     public static ArrayList<Characters> createCharacters() {
         ArrayList<Characters> suspects = new ArrayList<>();
 
-        Characters Bruna = new Characters("Bruna", "Guilty", "Not Guilty", false);
-        Characters Francisco = new Characters("Francisco", "Guilty", "Not Guilty", false);
-        Characters Fatima = new Characters("Fátima", "Guilty", "Not Guilty", false);
-        Characters Paulo = new Characters("Paulo", "Guilty", "Not Guilty", false);
-        Characters David = new Characters("David", "Guilty", "Not Gilty", false);
-        Characters Rodrigo = new Characters("Rodrigo", "Guilty", "Not Guilty", false);
+        Characters Bruna = new Characters("Bruna", "Às vezes, a máscara da inocência esconde segredos, assim como a sombra da culpa pode encobrir a verdade.",
+                "Na simplicidade da verdade, a luz revela um caminho claro, onde a inocência é a narrativa indiscutível.", false);
+        Characters Francisco = new Characters("Francisco",
+                "Às vezes, a máscara da inocência esconde segredos, assim como a sombra da culpa pode encobrir a verdade.",
+                "Na simplicidade da verdade, a luz revela um caminho claro, onde a inocência é a narrativa indiscutível.", false);
+        Characters Fatima = new Characters("Fátima",
+                "Às vezes, a máscara da inocência esconde segredos, assim como a sombra da culpa pode encobrir a verdade.",
+                "Na simplicidade da verdade, a luz revela um caminho claro, onde a inocência é a narrativa indiscutível.", false);
+        Characters Paulo = new Characters("Paulo",
+                "Às vezes, a máscara da inocência esconde segredos, assim como a sombra da culpa pode encobrir a verdade.",
+                "Na simplicidade da verdade, a luz revela um caminho claro, onde a inocência é a narrativa indiscutível.", false);
+        Characters David = new Characters("David",
+                "Às vezes, a máscara da inocência esconde segredos, assim como a sombra da culpa pode encobrir a verdade.",
+                "Na simplicidade da verdade, a luz revela um caminho claro, onde a inocência é a narrativa indiscutível.", false);
+        Characters Rodrigo = new Characters("Rodrigo",
+                "Às vezes, a máscara da inocência esconde segredos, assim como a sombra da culpa pode encobrir a verdade.",
+                "Na simplicidade da verdade, a luz revela um caminho claro, onde a inocência é a narrativa indiscutível.", false);
 
         suspects.add(Bruna);
         suspects.add(Francisco);
