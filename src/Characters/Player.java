@@ -1,3 +1,5 @@
+package Characters;
+
 import Weapons.Weapons;
 
 import java.util.LinkedList;

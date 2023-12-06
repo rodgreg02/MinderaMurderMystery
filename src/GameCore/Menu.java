@@ -1,3 +1,5 @@
+package GameCore;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -8,7 +10,7 @@ public class Menu {
         Scanner scan = new Scanner(System.in);
         boolean quitGame = false;
         while (!quitGame) {
-            System.out.println("==== Welcome to MurderMistery Game ====");
+            System.out.println("==== Welcome to MurderMistery GameCore.Game ====");
             System.out.println("1 => Play");
             System.out.println("2 => Exit");
             String option = scan.next();

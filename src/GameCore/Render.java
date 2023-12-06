@@ -1,3 +1,5 @@
+package GameCore;
+
 import Rooms.Room;
 
 public class Render {

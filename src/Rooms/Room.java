@@ -1,4 +1,5 @@
 package Rooms;
+import GameCore.Game;
 
 
 public class Room {
@@ -16,7 +17,7 @@ public class Room {
         rooms[0] = hall;
         Room livingRoom = new Room("Living Room");
         rooms[1] = livingRoom;
-        Room gameRoom = new Room("Game Room");
+        Room gameRoom = new Room("GameCore.Game Room");
         rooms[2] = gameRoom;
         Room kitchen = new Room("Kitchen");
         rooms[3] = kitchen;
@@ -43,5 +44,9 @@ public class Room {
 
     public void setClue(Object clue) {
         this.clue = clue;
+    }
+
+    public static Room getRandomRoom(Room[] rooms){
+        return rooms[Game.randomNumberGenerator(8)];
     }
 }
