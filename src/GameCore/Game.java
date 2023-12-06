@@ -7,10 +7,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
-static Scanner scan = new Scanner(System.in);
+    static Scanner scan = new Scanner(System.in);
     Menu menu = new Menu();
 
-    public void startGame(){
+    public void startGame() {
         menu.mainMenu();
     }
 
@@ -26,6 +26,7 @@ static Scanner scan = new Scanner(System.in);
         weapons.get(valueRandom).setWasUsedToKill(true);
         System.out.println(weapons.get(valueRandom).getWeaponName());
     }
+
 
     static ArrayList<Characters> suspects = new ArrayList<>();
 
