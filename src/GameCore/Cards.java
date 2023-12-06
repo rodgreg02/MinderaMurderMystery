@@ -5,7 +5,6 @@ public abstract class Cards {
     public String name;
     public String clueSus;
     public String clueNonSus;
-
     public boolean wasUsedToKill;
 
     public String getClueSus() {
@@ -22,5 +21,13 @@ public abstract class Cards {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setWasUsedToKill(boolean wasUsedToKill) {
+        this.wasUsedToKill = wasUsedToKill;
+    }
+
+    public boolean isWasUsedToKill() {
+        return wasUsedToKill;
     }
 }

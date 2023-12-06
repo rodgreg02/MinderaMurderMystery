@@ -29,7 +29,7 @@ public class Weapons extends Cards{
         return wasUsedToKill;
     }
 
-    static ArrayList<Weapons> arrayListWeapons = new ArrayList<>();
+   public static ArrayList<Weapons> arrayListWeapons = new ArrayList<>();
 
 
     public static ArrayList<Weapons> CreateWeapons() {
@@ -50,8 +50,6 @@ public class Weapons extends Cards{
         return arrayListWeapons;
     }
 
-    public void setWasUsedToKill(boolean wasUsedToKill) {
-        this.wasUsedToKill = wasUsedToKill;
-    }
+
 
 }

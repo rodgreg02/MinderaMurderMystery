@@ -2,18 +2,16 @@ package Characters;
 
 import java.util.ArrayList;
 import GameCore.Cards;
+import GameCore.Game;
+import Weapons.Weapons;
 
 public class Characters extends Cards{
-    String name;
-    String tipGuilty;
-    String tipNotGuilty;
-    boolean suspectFound;
 
     public Characters(String name, String tipGuilty, String tipNotGuilty, boolean suspectFound) {
         this.name = name;
-        this.tipGuilty = tipGuilty;
-        this.tipNotGuilty = tipNotGuilty;
-        this.suspectFound = false;
+        this.clueSus = tipGuilty;
+        this.clueNonSus = tipNotGuilty;
+        this.wasUsedToKill = false;
     }
 
 
@@ -22,23 +20,19 @@ public class Characters extends Cards{
     }
 
     public String getTipGuilty() {
-        return tipGuilty;
+        return clueSus;
     }
 
     public String getTipNotGuilty() {
-        return tipNotGuilty;
+        return clueNonSus;
     }
 
     public boolean isTipUsed() {
-        return suspectFound;
-    }
-
-    public void setTipUsed(boolean tipUsed) {
-        this.suspectFound = tipUsed;
+        return wasUsedToKill;
     }
     //-------------------------
 
-    static ArrayList<Characters> suspects = new ArrayList<>();
+    public static ArrayList<Characters> suspects = new ArrayList<>();
 
     public static ArrayList<Characters> createCharacters() {
         Characters Bruna = new Characters("Bruna", "Guilty", "Not Guilty", false);
@@ -56,6 +50,11 @@ public class Characters extends Cards{
         suspects.add(Rodrigo);
 
         return suspects;
+    }
+
+    public static void chooseRandomCharacterKill() {
+        int valueRandom = (Game.randomNumberGenerator(5));
+        Characters.suspects.get(valueRandom).setWasUsedToKill(true);
     }
 
 }
