@@ -1,9 +1,7 @@
-import Characters.Characters;
-import GameCore.Game;
-import Characters.Player;
-import GameCore.Render;
-import Rooms.Room;
-import Weapons.Weapons;
+import characters.Character;
+import gameCore.Game;
+import room.Room;
+import weapon.Weapon;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,16 +10,16 @@ public class Main {
         for (int i = 0; i < Room.rooms.size(); i++) {
             System.out.println(Room.rooms.get(i).getName() + " " + Room.rooms.get(i).wasUsedToKill);
         }
-        Characters.createCharacters();
-        Characters.chooseRandomCharacterKill();
-        for (int i = 0; i < Characters.suspects.size(); i++) {
-            System.out.println(Characters.suspects.get(i).getName() + " " + Characters.suspects.get(i).wasUsedToKill);
+        Character.createCharacters();
+        Character.chooseRandomCharacterKill();
+        for (int i = 0; i < Character.suspects.size(); i++) {
+            System.out.println(Character.suspects.get(i).getName() + " " + Character.suspects.get(i).wasUsedToKill);
         }
-    Weapons.CreateWeapons();
+    Weapon.createWeapons();
         System.out.println("\n\n\n");
         Game.chooseRandomWeaponKill();
-        for (int i = 0; i < Weapons.arrayListWeapons.size(); i++) {
-            System.out.println(Weapons.arrayListWeapons.get(i).getWeaponName() + " " + Weapons.arrayListWeapons.get(i).wasUsedToKill());
+        for (int i = 0; i < Weapon.arrayListWeapons.size(); i++) {
+            System.out.println(Weapon.arrayListWeapons.get(i).getWeaponName() + " " + Weapon.arrayListWeapons.get(i).wasUsedToKill());
         }
     }
 }

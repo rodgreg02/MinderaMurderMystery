@@ -1,13 +1,12 @@
-package Rooms;
-import GameCore.Game;
-import GameCore.Cards;
-import Weapons.Weapons;
+package room;
+import gameCore.Game;
+import gameCore.Card;
 
 import java.util.ArrayList;
 
 
-public class Room extends Cards{
-    private Cards clue;
+public class Room extends Card {
+    private Card clue;
 
     public Room(String name) {
         this.name = name;
@@ -44,11 +43,11 @@ public class Room extends Cards{
         return clue;
     }
 
-    public void setClue(Cards clue) {
+    public void setClue(Card clue) {
         this.clue = clue;
     }
 
-    public static Room[] distributeClues(Room[] rooms,Cards[] clues){
+    public static Room[] distributeClues(Room[] rooms, Card[] clues){
 
         for (int i = 0; i < rooms.length; i++) {
             rooms[Game.randomNumberGenerator(7)].setClue(clues[i]);

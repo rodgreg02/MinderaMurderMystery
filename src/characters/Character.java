@@ -1,24 +1,21 @@
-package Characters;
+package characters;
 
 import java.util.ArrayList;
 
-import GameCore.Cards;
-import GameCore.Game;
-import Weapons.Weapons;
-
-import java.util.Random;
+import gameCore.Card;
+import gameCore.Game;
 
 
-public class Characters extends Cards{
+public class Character extends Card {
 
-    public Characters(String name, String tipGuilty, String tipNotGuilty, boolean suspectFound) {
+    public Character(String name, String tipGuilty, String tipNotGuilty, boolean suspectFound) {
         this.name = name;
         this.clueSus = tipGuilty;
         this.clueNonSus = tipNotGuilty;
         this.wasUsedToKill = false;
     }
 
-    public String isSuspectFound(Characters characters){
+    public String isSuspectFound(Character characters){
         return (characters.suspectFound) ? getTipGuilty() : getTipNotGuilty();
     }
 
@@ -39,29 +36,29 @@ public class Characters extends Cards{
     }
 
 
-    public static ArrayList<Characters> suspects = new ArrayList<>();
+    public static ArrayList<Character> suspects = new ArrayList<>();
 
 
-    static ArrayList<Characters> suspects = new ArrayList<>();
+    static ArrayList<Character> suspects = new ArrayList<>();
 
-    public static ArrayList<Characters> createCharacters() {
+    public static ArrayList<Character> createCharacters() {
 
 
-        Characters Bruna = new Characters("Bruna", "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
+        Character Bruna = new Character("Bruna", "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
                 "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
-        Characters Francisco = new Characters("Francisco",
+        Character Francisco = new Character("Francisco",
                 "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
                 "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
-        Characters Fatima = new Characters("Fátima",
+        Character Fatima = new Character("Fátima",
                 "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
                 "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
-        Characters Paulo = new Characters("Paulo",
+        Character Paulo = new Character("Paulo",
                 "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
                 "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
-        Characters David = new Characters("David",
+        Character David = new Character("David",
                 "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
                 "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
-        Characters Rodrigo = new Characters("Rodrigo",
+        Character Rodrigo = new Character("Rodrigo",
                 "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
                 "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
 
@@ -78,7 +75,7 @@ public class Characters extends Cards{
 
     public static void chooseRandomCharacterKill() {
         int valueRandom = (Game.randomNumberGenerator(5));
-        Characters.suspects.get(valueRandom).setWasUsedToKill(true);
+        Character.suspects.get(valueRandom).setWasUsedToKill(true);
     }
 
 

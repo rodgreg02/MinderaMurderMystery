@@ -1,7 +1,7 @@
-package GameCore;
+package gameCore;
 
-import Characters.Characters;
-import Weapons.Weapons;
+import characters.Character;
+import weapon.Weapon;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -22,11 +22,11 @@ public class Game {
 
     public static void chooseRandomWeaponKill() {
         int valueRandom = (Game.randomNumberGenerator(5));
-        Weapons.arrayListWeapons.get(valueRandom).setWasUsedToKill(true);
+        Weapon.arrayListWeapons.get(valueRandom).setWasUsedToKill(true);
     }
 
 
-    static ArrayList<Characters> suspects = new ArrayList<>();
+    static ArrayList<Character> suspects = new ArrayList<>();
 
     public int numbRandomSuspects(int numbRandom){
         Random random = new Random();

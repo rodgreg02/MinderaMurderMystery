@@ -1,7 +1,7 @@
-package GameCore;
+package gameCore;
 
 
-public abstract class Cards {
+public abstract class Card {
     public String name;
     public String clueSus;
     public String clueNonSus;
