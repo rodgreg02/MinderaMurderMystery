@@ -3,9 +3,8 @@ import GameCore.Game;
 
 
 public class Room {
-    private String name;
+    private final String name;
     private Object clue;
-    //TODO ADD THIS SHIT
 
     public Room(String name) {
         this.name = name;
@@ -17,7 +16,7 @@ public class Room {
         rooms[0] = hall;
         Room livingRoom = new Room("Living Room");
         rooms[1] = livingRoom;
-        Room gameRoom = new Room("GameCore.Game Room");
+        Room gameRoom = new Room("Game Room");
         rooms[2] = gameRoom;
         Room kitchen = new Room("Kitchen");
         rooms[3] = kitchen;
@@ -47,6 +46,12 @@ public class Room {
     }
 
     public static Room getRandomRoom(Room[] rooms){
-        return rooms[Game.randomNumberGenerator(8)];
+        return rooms[Game.randomNumberGenerator(7)];
+    }
+    public static Room[] distributeClues(Room[] rooms,Object[] clues){
+        for (int i = 0; i < rooms.length; i++) {
+            rooms[Game.randomNumberGenerator(7)].setClue(clues[i]);
+        }
+        return rooms;
     }
 }

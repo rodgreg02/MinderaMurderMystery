@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Weapons {
     String weaponName;
-    String tipSus;
-    String tipNonSus;
+    String clueSus;
+    String clueNonSus;
     boolean wasUsedToKill;
 
     public Weapons(String weaponName, String tipSus, String tipNonSus, boolean wasUsedToKill) {
         this.weaponName = weaponName;
-        this.tipSus = tipSus;
-        this.tipNonSus = tipNonSus;
+        this.clueSus = tipSus;
+        this.clueNonSus = tipNonSus;
         this.wasUsedToKill = wasUsedToKill;
     }
 
@@ -20,11 +20,11 @@ public class Weapons {
     }
 
     public String getTipSus() {
-        return tipSus;
+        return clueSus;
     }
 
     public String getTipNonSus() {
-        return tipNonSus;
+        return clueNonSus;
     }
 
     public boolean wasUsedToKill() {
