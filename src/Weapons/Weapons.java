@@ -59,7 +59,6 @@ public class Weapons {
 
     @Override
     public String toString() {
-        return "weaponName='" + weaponName + '\'' +
-                '}';
+        return   weaponName ;
     }
 }
