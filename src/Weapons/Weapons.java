@@ -55,4 +55,5 @@ public class Weapons {
     public void setWasUsedToKill(boolean wasUsedToKill) {
         this.wasUsedToKill = wasUsedToKill;
     }
+
 }

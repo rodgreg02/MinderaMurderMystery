@@ -49,6 +49,7 @@ public class Room {
         return rooms[Game.randomNumberGenerator(7)];
     }
     public static Room[] distributeClues(Room[] rooms,Object[] clues){
+
         for (int i = 0; i < rooms.length; i++) {
             rooms[Game.randomNumberGenerator(7)].setClue(clues[i]);
         }
