@@ -31,7 +31,7 @@ public class Weapons {
         return wasUsedToKill;
     }
 
-    static ArrayList<Weapons> arrayListWeapons = new ArrayList<>();
+    public static ArrayList<Weapons> arrayListWeapons = new ArrayList<>();
 
     public static ArrayList<Weapons> CreateWeapons() {
         Weapons knife = new Weapons("Knife", "This Knife is poorly clean", "This Knife is clean", false);
