@@ -35,7 +35,7 @@ public class Game {
 
     public void chooseRandomSuspect(){
         int randomSuspects = (numbRandomSuspects(6));
-        suspects.get(randomSuspects).setTipUsed(true);
+        suspects.get(randomSuspects).setWasUsedToKill(true);
         System.out.println(suspects.get(randomSuspects).getName());
     }
 
