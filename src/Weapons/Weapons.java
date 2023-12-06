@@ -55,10 +55,12 @@ public class Weapons {
         this.wasUsedToKill = wasUsedToKill;
     }
 
-
     @Override
     public String toString() {
-        return   weaponName ;
+        return weaponName;
     }
 
+    public String getClue(Weapons oneWeapon) {
+        return (oneWeapon.wasUsedToKill() ? getTipSus() : getTipNonSus());
+    }
 }

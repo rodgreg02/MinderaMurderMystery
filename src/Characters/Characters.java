@@ -1,6 +1,7 @@
 package Characters;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Characters {
     String name;
