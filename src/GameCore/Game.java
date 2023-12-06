@@ -1,5 +1,6 @@
 package GameCore;
 
+import Characters.Characters;
 import Weapons.Weapons;
 import java.util.ArrayList;
 import java.util.Random;
@@ -25,4 +26,20 @@ public class Game {
         weapons.get(valueRandom).setWasUsedToKill(true);
         System.out.println(weapons.get(valueRandom).getWeaponName());
     }
+
+
+    static ArrayList<Characters> suspects = new ArrayList<>();
+
+    public int numbRandomSuspects(int numbRandom){
+        Random random = new Random();
+        return random.nextInt(numbRandom);
+    }
+
+    public void chooseRandomSuspect(){
+        int randomSuspects = (numbRandomSuspects(6));
+        suspects.get(randomSuspects).setTipUsed(true);
+        System.out.println(suspects.get(randomSuspects).getName());
+    }
+
+
 }
