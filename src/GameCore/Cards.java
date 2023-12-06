@@ -7,12 +7,8 @@ public abstract class Cards {
     public String clueNonSus;
     public boolean wasUsedToKill;
 
-    public String getClueSus() {
-        return clueSus;
-    }
-
-    public String getClueNonSus() {
-        return clueNonSus;
+    public String getClue() {
+        return (this.wasUsedToKill)?clueSus:clueNonSus;
     }
 
     public String getName() {

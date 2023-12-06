@@ -1,9 +1,6 @@
-
 import Characters.Characters;
 import GameCore.Game;
-
 import Characters.Player;
-
 import GameCore.Render;
 import Rooms.Room;
 import Weapons.Weapons;
