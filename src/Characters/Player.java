@@ -1,5 +1,6 @@
 package Characters;
 
+import Rooms.Room;
 import Weapons.Weapons;
 
 import java.util.LinkedList;
@@ -10,12 +11,13 @@ public class Player {
     private final String name;
     private final String emoji = "🕵🏽‍♂️️";
 
-    List<String> detectiveBag = new LinkedList<>();
+    List<Object> detectiveBag = new LinkedList<>();
 
 
-
-    private void investigate(){
-
+    public void investigate(Room room){
+        System.out.println("Investigating...");
+        System.out.println("You fond a " +room.getClue().toString());
+        detectiveBag.add(room.getClue());
     }
 
 
