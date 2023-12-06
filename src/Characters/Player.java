@@ -1,5 +1,6 @@
 package Characters;
 
+import GameCore.Cards;
 import Rooms.Room;
 import Weapons.Weapons;
 
@@ -18,6 +19,11 @@ public class Player {
         System.out.println("Investigating...");
         System.out.println("You fond a " + room.getClue().toString());
         detectiveBag.add(room.getClue());
+    }
+
+
+    public void examine(Cards card){
+
     }
 
     public Player(String name) {

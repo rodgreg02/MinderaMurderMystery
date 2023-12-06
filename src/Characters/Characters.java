@@ -18,9 +18,7 @@ public class Characters extends Cards{
         this.wasUsedToKill = false;
     }
 
-    public String isSuspectFound(Characters characters){
-        return (characters.suspectFound) ? getTipGuilty() : getTipNotGuilty();
-    }
+
 
     public String getName() {
         return name;
@@ -42,7 +40,6 @@ public class Characters extends Cards{
     public static ArrayList<Characters> suspects = new ArrayList<>();
 
 
-    static ArrayList<Characters> suspects = new ArrayList<>();
 
     public static ArrayList<Characters> createCharacters() {
 
