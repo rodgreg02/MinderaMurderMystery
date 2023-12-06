@@ -6,7 +6,11 @@ public class Story {
     static void startStory(Player player) {
         System.out.println("\t\t\t\t\tMindera Murder Mystery");
         System.out.println("""
+
+                \tNuma noite o detetive""" + " "+ player.getName()+ """
+
                 \tNuma noite o detetive""" + " " + player.getName() + """
+
                   foi chamado para um caso complicado.
                 \tA policia ligou-lhe para ir a casa do Sr Flávio pois o mesmo foi assassinado.
                                 

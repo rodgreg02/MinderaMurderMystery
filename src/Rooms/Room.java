@@ -1,36 +1,39 @@
 package Rooms;
 import GameCore.Game;
+import GameCore.Cards;
+import Weapons.Weapons;
+
+import java.util.ArrayList;
 
 
-public class Room {
-    private final String name;
-    private Object clue;
+public class Room extends Cards{
+    private Cards clue;
 
     public Room(String name) {
         this.name = name;
     }
 
-    public static Room[] createMap() {
-        Room[] rooms = new Room[9];
+    public static ArrayList<Room> rooms = new ArrayList<>();
+
+    public static void createMap() {
         Room hall = new Room("Hall");
-        rooms[0] = hall;
+        rooms.add(hall);
         Room livingRoom = new Room("Living Room");
-        rooms[1] = livingRoom;
+        rooms.add(livingRoom);
         Room gameRoom = new Room("Game Room");
-        rooms[2] = gameRoom;
+        rooms.add(gameRoom);
         Room kitchen = new Room("Kitchen");
-        rooms[3] = kitchen;
+        rooms.add(kitchen);
         Room partyRoom = new Room("Party Room");
-        rooms[4] = partyRoom;
+        rooms.add(partyRoom);
         Room musicRoom = new Room("Music Room");
-        rooms[5] = musicRoom;
+        rooms.add(musicRoom);
         Room library = new Room("Library");
-        rooms[6] = library;
+        rooms.add(library);
         Room office = new Room("Office");
-        rooms[7] = office;
+        rooms.add(office);
         Room pool = new Room("Pool");
-        rooms[8] = pool;
-        return rooms;
+        rooms.add(pool);
     }
 
     public String getName() {
@@ -41,17 +44,20 @@ public class Room {
         return clue;
     }
 
-    public void setClue(Object clue) {
+    public void setClue(Cards clue) {
         this.clue = clue;
     }
 
-    public static Room getRandomRoom(Room[] rooms){
-        return rooms[Game.randomNumberGenerator(7)];
-    }
-    public static Room[] distributeClues(Room[] rooms,Object[] clues){
+    public static Room[] distributeClues(Room[] rooms,Cards[] clues){
+
         for (int i = 0; i < rooms.length; i++) {
             rooms[Game.randomNumberGenerator(7)].setClue(clues[i]);
         }
         return rooms;
+    }
+
+    public static void chooseRandomRoomKill() {
+        int valueRandom = (Game.randomNumberGenerator(7));
+        Room.rooms.get(valueRandom).setWasUsedToKill(true);
     }
 }

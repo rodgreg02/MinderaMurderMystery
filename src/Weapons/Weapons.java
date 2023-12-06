@@ -1,22 +1,20 @@
 package Weapons;
 
 import java.util.ArrayList;
+import GameCore.Cards;
 
-public class Weapons {
-    String weaponName;
-    String clueSus;
-    String clueNonSus;
-    boolean wasUsedToKill;
+public class Weapons extends Cards{
 
-    public Weapons(String weaponName, String tipSus, String tipNonSus, boolean wasUsedToKill) {
-        this.weaponName = weaponName;
+
+    public Weapons(String name, String tipSus, String tipNonSus, boolean wasUsedToKill) {
+        this.name = name;
         this.clueSus = tipSus;
         this.clueNonSus = tipNonSus;
         this.wasUsedToKill = wasUsedToKill;
     }
 
     public String getWeaponName() {
-        return weaponName;
+        return name;
     }
 
     public String getTipSus() {
@@ -31,7 +29,12 @@ public class Weapons {
         return wasUsedToKill;
     }
 
+
+   public static ArrayList<Weapons> arrayListWeapons = new ArrayList<>();
+
+
     public static ArrayList<Weapons> arrayListWeapons = new ArrayList<>();
+
 
     public static ArrayList<Weapons> CreateWeapons() {
         Weapons knife = new Weapons("Knife", "This Knife is poorly clean", "This Knife is clean", false);
@@ -51,6 +54,10 @@ public class Weapons {
         return arrayListWeapons;
     }
 
+
+
+
+
     public void setWasUsedToKill(boolean wasUsedToKill) {
         this.wasUsedToKill = wasUsedToKill;
     }
@@ -63,4 +70,5 @@ public class Weapons {
     public String getClue(Weapons oneWeapon) {
         return (oneWeapon.wasUsedToKill() ? getTipSus() : getTipNonSus());
     }
+
 }

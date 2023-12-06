@@ -14,17 +14,15 @@ public class Game {
         menu.mainMenu();
     }
 
-    static ArrayList<Weapons> weapons = Weapons.CreateWeapons();
 
     static public int randomNumberGenerator(int numRandom) {
         Random random = new Random();
         return random.nextInt(numRandom);
     }
 
-    static void chooseRandomWeaponKill() {
-        int valueRandom = (Game.randomNumberGenerator(6));
-        weapons.get(valueRandom).setWasUsedToKill(true);
-        System.out.println(weapons.get(valueRandom).getWeaponName());
+    public static void chooseRandomWeaponKill() {
+        int valueRandom = (Game.randomNumberGenerator(5));
+        Weapons.arrayListWeapons.get(valueRandom).setWasUsedToKill(true);
     }
 
 
