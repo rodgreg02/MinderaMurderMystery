@@ -15,6 +15,9 @@ public class Characters {
         this.suspectFound = false;
     }
 
+    public String isSuspectFound(Characters characters){
+        return (characters.suspectFound) ? getTipGuilty() : getTipNotGuilty();
+    }
 
     public String getName() {
         return name;
@@ -35,26 +38,36 @@ public class Characters {
     public void setTipUsed(boolean tipUsed) {
         this.suspectFound = tipUsed;
     }
-    //-------------------------
 
     static ArrayList<Characters> suspects = new ArrayList<>();
-
     public static ArrayList<Characters> createCharacters() {
-        Characters Bruna = new Characters("Bruna", "Guilty", "Not Guilty", false);
-        Characters Francisco = new Characters("Francisco", "Guilty", "Not Guilty", false);
-        Characters Fatima = new Characters("Fátima", "Guilty", "Not Guilty", false);
-        Characters Paulo = new Characters("Paulo", "Guilty", "Not Guilty", false);
-        Characters Gabi = new Characters("Gabi", "Guilty", "Not Gilty", false);
-        Characters Rodrigo = new Characters("Rodrigo", "Guilty", "Not Guilty", false);
+
+
+        Characters Bruna = new Characters("Bruna", "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
+                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
+        Characters Francisco = new Characters("Francisco",
+                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
+                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
+        Characters Fatima = new Characters("Fátima",
+                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
+                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
+        Characters Paulo = new Characters("Paulo",
+                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
+                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
+        Characters David = new Characters("David",
+                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
+                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
+        Characters Rodrigo = new Characters("Rodrigo",
+                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
+                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
 
         suspects.add(Bruna);
         suspects.add(Francisco);
         suspects.add(Fatima);
         suspects.add(Paulo);
-        suspects.add(Gabi);
+        suspects.add(David);
         suspects.add(Rodrigo);
 
         return suspects;
     }
-
 }
