@@ -1,8 +1,9 @@
 package Characters;
 
 import java.util.ArrayList;
+import GameCore.Cards;
 
-public class Characters {
+public class Characters extends Cards{
     String name;
     String tipGuilty;
     String tipNotGuilty;

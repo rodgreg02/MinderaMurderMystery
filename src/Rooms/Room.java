@@ -1,10 +1,10 @@
 package Rooms;
 import GameCore.Game;
+import GameCore.Cards;
 
 
-public class Room {
-    private final String name;
-    private Object clue;
+public class Room extends Cards{
+    private Cards clue;
 
     public Room(String name) {
         this.name = name;
@@ -41,14 +41,14 @@ public class Room {
         return clue;
     }
 
-    public void setClue(Object clue) {
+    public void setClue(Cards clue) {
         this.clue = clue;
     }
 
     public static Room getRandomRoom(Room[] rooms){
         return rooms[Game.randomNumberGenerator(7)];
     }
-    public static Room[] distributeClues(Room[] rooms,Object[] clues){
+    public static Room[] distributeClues(Room[] rooms,Cards[] clues){
 
         for (int i = 0; i < rooms.length; i++) {
             rooms[Game.randomNumberGenerator(7)].setClue(clues[i]);

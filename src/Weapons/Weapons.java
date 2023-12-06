@@ -1,22 +1,20 @@
 package Weapons;
 
 import java.util.ArrayList;
+import GameCore.Cards;
 
-public class Weapons {
-    String weaponName;
-    String clueSus;
-    String clueNonSus;
-    boolean wasUsedToKill;
+public class Weapons extends Cards{
 
-    public Weapons(String weaponName, String tipSus, String tipNonSus, boolean wasUsedToKill) {
-        this.weaponName = weaponName;
+
+    public Weapons(String name, String tipSus, String tipNonSus, boolean wasUsedToKill) {
+        this.name = name;
         this.clueSus = tipSus;
         this.clueNonSus = tipNonSus;
         this.wasUsedToKill = wasUsedToKill;
     }
 
     public String getWeaponName() {
-        return weaponName;
+        return name;
     }
 
     public String getTipSus() {
