@@ -1,16 +1,9 @@
-
-import Characters.Characters;
-
-import java.util.ArrayList;
+import GameCore.Render;
+import Rooms.Room;
 
 public class Main {
-
-    static Player player = new Player("asdad");
     public static void main(String[] args) {
-    Game game = new Game();
-    game.startGame();
-
-
-
+        Room[] map = Room.createMap();
+        Render.drawMap(map);
     }
 }

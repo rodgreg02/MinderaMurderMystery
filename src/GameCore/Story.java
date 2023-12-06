@@ -1,3 +1,7 @@
+package GameCore;
+
+import Characters.Player;
+
 public class Story {
      static void startStory(Player player){
         System.out.println("\t\t\t\t\tMindera Murder Mystery");
