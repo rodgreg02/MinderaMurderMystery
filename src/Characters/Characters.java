@@ -1,6 +1,7 @@
 package Characters;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Characters {
     String name;
@@ -15,6 +16,9 @@ public class Characters {
         this.suspectFound = false;
     }
 
+    public String isSuspectFound(Characters characters){
+        return (characters.suspectFound) ? getTipGuilty() : getTipNotGuilty();
+    }
 
     public String getName() {
         return name;
@@ -37,26 +41,27 @@ public class Characters {
     }
     //-------------------------
 
+    static ArrayList<Characters> suspects = new ArrayList<>();
     public static ArrayList<Characters> createCharacters() {
-        ArrayList<Characters> suspects = new ArrayList<>();
 
-        Characters Bruna = new Characters("Bruna", "Às vezes, a máscara da inocência esconde segredos, assim como a sombra da culpa pode encobrir a verdade.",
-                "Na simplicidade da verdade, a luz revela um caminho claro, onde a inocência é a narrativa indiscutível.", false);
+
+        Characters Bruna = new Characters("Bruna", "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
+                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
         Characters Francisco = new Characters("Francisco",
-                "Às vezes, a máscara da inocência esconde segredos, assim como a sombra da culpa pode encobrir a verdade.",
-                "Na simplicidade da verdade, a luz revela um caminho claro, onde a inocência é a narrativa indiscutível.", false);
+                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
+                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
         Characters Fatima = new Characters("Fátima",
-                "Às vezes, a máscara da inocência esconde segredos, assim como a sombra da culpa pode encobrir a verdade.",
-                "Na simplicidade da verdade, a luz revela um caminho claro, onde a inocência é a narrativa indiscutível.", false);
+                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
+                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
         Characters Paulo = new Characters("Paulo",
-                "Às vezes, a máscara da inocência esconde segredos, assim como a sombra da culpa pode encobrir a verdade.",
-                "Na simplicidade da verdade, a luz revela um caminho claro, onde a inocência é a narrativa indiscutível.", false);
+                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
+                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
         Characters David = new Characters("David",
-                "Às vezes, a máscara da inocência esconde segredos, assim como a sombra da culpa pode encobrir a verdade.",
-                "Na simplicidade da verdade, a luz revela um caminho claro, onde a inocência é a narrativa indiscutível.", false);
+                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
+                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
         Characters Rodrigo = new Characters("Rodrigo",
-                "Às vezes, a máscara da inocência esconde segredos, assim como a sombra da culpa pode encobrir a verdade.",
-                "Na simplicidade da verdade, a luz revela um caminho claro, onde a inocência é a narrativa indiscutível.", false);
+                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
+                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
 
         suspects.add(Bruna);
         suspects.add(Francisco);
@@ -67,5 +72,4 @@ public class Characters {
 
         return suspects;
     }
-
 }
