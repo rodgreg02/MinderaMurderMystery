@@ -39,7 +39,6 @@ public class Characters {
     public void setTipUsed(boolean tipUsed) {
         this.suspectFound = tipUsed;
     }
-    //-------------------------
 
     static ArrayList<Characters> suspects = new ArrayList<>();
     public static ArrayList<Characters> createCharacters() {
