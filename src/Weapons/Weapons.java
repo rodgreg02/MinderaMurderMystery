@@ -55,7 +55,10 @@ public class Weapons {
         this.wasUsedToKill = wasUsedToKill;
     }
 
-    public String getClue(Weapons oneWeapon) {
-        return (oneWeapon.wasUsedToKill) ? getTipSus() : getTipNonSus();
+
+    @Override
+    public String toString() {
+        return   weaponName ;
     }
+
 }

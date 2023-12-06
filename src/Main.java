@@ -1,5 +1,7 @@
+import Characters.Player;
 import GameCore.Render;
 import Rooms.Room;
+import Weapons.Weapons;
 
 public class Main {
     public static void main(String[] args) {
