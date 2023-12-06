@@ -1,7 +1,6 @@
-package Characters;
+package characters;
 
-import Rooms.Room;
-import Weapons.Weapons;
+import room.Room;
 
 import java.util.LinkedList;
 import java.util.List;

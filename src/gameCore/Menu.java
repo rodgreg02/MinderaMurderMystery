@@ -1,5 +1,5 @@
-package GameCore;
-import Characters.Player;
+package gameCore;
+import characters.Player;
 import java.util.Scanner;
 
 public class Menu {

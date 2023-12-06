@@ -1,6 +1,6 @@
-package GameCore;
+package gameCore;
 
-import Rooms.Room;
+import room.Room;
 
 public class Render {
     public static void drawMap(Room[] rooms) {

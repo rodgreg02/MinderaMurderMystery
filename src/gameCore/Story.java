@@ -1,6 +1,6 @@
-package GameCore;
+package gameCore;
 
-import Characters.Player;
+import characters.Player;
 
 public class Story {
     static void startStory(Player player) {
