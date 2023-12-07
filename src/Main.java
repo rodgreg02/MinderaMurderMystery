@@ -1,13 +1,15 @@
 import characters.Character;
+import characters.Player;
 import gameCore.Card;
 import gameCore.Game;
+import gameCore.Menu;
 import room.Room;
 import weapon.Weapon;
 
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ArrayList<Card> allClues = new ArrayList<>();
         ArrayList<Card> selectedClues = new ArrayList<>();
 
@@ -23,11 +25,16 @@ public class Main {
         allClues.addAll(Weapon.arrayListWeapons);
 
         Room.distributeClues(allClues);
-
-        /*for (Room room:
+       /* for (Room room:
              Room.rooms) {
             System.out.println(room.getClueObject());
-        }*/
-        System.out.println(Room.rooms.get(3).getClueRoom());
+
+
+        Player player = new Player("asda");
+        player.investigate(Room.rooms.get(1));
+        player.examine(Room.rooms.get(1));
+    }   }*/
+        Menu menu = new Menu();
+        menu.mainMenu();
     }
 }

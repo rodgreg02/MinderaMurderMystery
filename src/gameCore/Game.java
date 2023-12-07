@@ -10,7 +10,7 @@ public class Game {
     static Scanner scan = new Scanner(System.in);
     Menu menu = new Menu();
 
-    public void startGame() {
+    public void startGame() throws InterruptedException {
         menu.mainMenu();
     }
 

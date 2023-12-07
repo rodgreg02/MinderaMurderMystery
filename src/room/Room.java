@@ -38,7 +38,7 @@ public class Room extends Card {
     }
 
     public String getClueObject() {
-        return clue.toString();
+            return clue.toString();
     }
 
     public String getClueRoom(){
@@ -68,4 +68,8 @@ public class Room extends Card {
         Room.rooms.get(valueRandom).setWasUsedToKill(true);
     }
 
+
+    public Card getClues() {
+        return clue;
+    }
 }

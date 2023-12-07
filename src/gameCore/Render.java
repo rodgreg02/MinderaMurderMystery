@@ -2,8 +2,11 @@ package gameCore;
 
 import room.Room;
 
+import java.util.ArrayList;
+
 public class Render {
-    public static void drawMap(Room[] rooms) {
+    public static void drawMap(ArrayList<Room> rooms0) {
+        Room[] rooms = rooms0.toArray(new Room[0]);
         int size = rooms.length;
         int rows = 3;
         int cols = 3;

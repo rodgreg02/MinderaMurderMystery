@@ -11,6 +11,7 @@ public abstract class Card {
         return (this.wasUsedToKill)?clueSus:clueNonSus;
     }
 
+
     public String getName() {
         return name;
     }
