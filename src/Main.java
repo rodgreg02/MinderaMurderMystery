@@ -1,6 +1,7 @@
 import characters.Character;
 import gameCore.Card;
 import gameCore.Game;
+import gameCore.Render;
 import room.Room;
 import weapon.Weapon;
 
@@ -29,5 +30,6 @@ public class Main {
             System.out.println(room.getClueObject());
         }*/
         System.out.println(Room.rooms.get(3).getClueRoom());
+
     }
 }
