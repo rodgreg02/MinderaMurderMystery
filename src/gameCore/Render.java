@@ -68,5 +68,21 @@ public class Render {
         System.out.print(currentRoom.getName());
         System.out.println("------------");
     }
+
+    public static void printStory(String stringToPrint){
+        for (int i = 0; i < stringToPrint.length(); i++) {
+            char letter = stringToPrint.charAt(i);
+
+            // Print one character at a time
+            System.out.print(letter);
+
+            // You can add a delay if you want to visualize each character being printed
+            try {
+                Thread.sleep(100); // Adjust the delay time (in milliseconds) if needed
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
 
