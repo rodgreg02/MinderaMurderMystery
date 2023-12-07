@@ -37,20 +37,30 @@ public class Room extends Card {
         rooms.add(pool);
     }
 
-    public Card getClueRoom() {
-        return clue;
+    public String getClueObject() {
+        return clue.toString();
+    }
+
+    public String getClueRoom(){
+        return this.getClue();
     }
 
     public void setClue(Card clue) {
         this.clue = clue;
     }
 
-    public static void distributeClues(Card[] clues){
-
-        for (int i = 0; i < rooms.size(); i++) {
-            rooms.get(Game.randomNumberGenerator(7)).setClue(clues[i]);
+    public static void distributeClues(ArrayList<Card> allClues){
+        int i = 0;
+        ArrayList<Integer> filledRooms = new ArrayList<>();
+        ArrayList<Card> selectedClues = Game.selectClues(allClues);
+        while(filledRooms.size() != 8){
+            int randomNumb = Game.randomNumberGenerator(8);
+            if(!filledRooms.contains(randomNumb)) {
+                rooms.get(randomNumb).setClue(selectedClues.get(i));
+                filledRooms.add(randomNumb);
+                i++;
+            }
         }
-        return;
     }
 
     public static void chooseRandomRoomKill() {

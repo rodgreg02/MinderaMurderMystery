@@ -26,4 +26,8 @@ public abstract class Card {
     public boolean getWasUsedToKill() {
         return wasUsedToKill;
     }
+
+    public String toString(){
+        return this.getClue();
+    }
 }

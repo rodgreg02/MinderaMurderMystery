@@ -21,7 +21,7 @@ public class Game {
     }
 
     public static void chooseRandomWeaponKill() {
-        int valueRandom = (Game.randomNumberGenerator(5));
+        int valueRandom = (Game.randomNumberGenerator(6));
         Weapon.arrayListWeapons.get(valueRandom).setWasUsedToKill(true);
     }
 
@@ -37,6 +37,25 @@ public class Game {
         int randomSuspects = (numbRandomSuspects(6));
         suspects.get(randomSuspects).setWasUsedToKill(true);
         System.out.println(suspects.get(randomSuspects).getName());
+    }
+
+    public  static ArrayList<Card> selectClues(ArrayList<Card> allClues){
+        ArrayList<Card> selectedClues = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            for (Card allClue : allClues) {
+                if (allClue.getWasUsedToKill() && !(selectedClues.contains(allClue))) {
+                    selectedClues.add(allClue);
+                }
+            }
+        }
+        while (selectedClues.size() != 8) {
+            int randomClue = Game.randomNumberGenerator(12);
+            if (!allClues.get(randomClue).getWasUsedToKill() && !(selectedClues.contains(allClues.get(randomClue)))) {
+                selectedClues.add(allClues.get(randomClue));
+            }
+
+        }
+        return selectedClues;
     }
 
 
