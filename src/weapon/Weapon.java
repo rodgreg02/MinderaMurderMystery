@@ -51,7 +51,7 @@ public class Weapon extends Card {
         arrayListWeapons.add(rope);
         arrayListWeapons.add(hammer);
 
-        return arrayListWeapons;
+        return;
     }
 
 
