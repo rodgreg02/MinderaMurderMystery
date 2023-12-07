@@ -36,7 +36,7 @@ public class Weapon extends Card {
 
 
 
-    public static ArrayList<Weapon> createWeapons() {
+    public static void createWeapons() {
         Weapon knife = new Weapon("Knife", "This Knife is poorly clean", "This Knife is clean", false);
         Weapon pistol = new Weapon("Pistol", "This Pistol is poorly clean", "This Pistol is clean", false);
         Weapon pipe = new Weapon("Pipe", "This Pipe is poorly clean", "This Pipe is clean", false);
