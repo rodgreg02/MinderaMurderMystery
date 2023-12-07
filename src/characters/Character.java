@@ -16,19 +16,19 @@ public class Character extends Card {
     }
 
     public String getSuspectClue(Character characters){
-        return (characters.wasUsedToKill) ? getTipGuilty() : getTipNotGuilty();
+        return (characters.wasUsedToKill) ? getClueGuilty() : getClueNotGuilty();
     }
 
 
-    public String getTipGuilty() {
+    public String getClueGuilty() {
         return clueSus;
     }
 
-    public String getTipNotGuilty() {
+    public String getClueNotGuilty() {
         return clueNonSus;
     }
 
-    public boolean isTipUsed() {
+    public boolean  getWasUsedToKill() {
         return wasUsedToKill;
     }
 

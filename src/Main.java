@@ -2,6 +2,7 @@ import characters.Character;
 import gameCore.Game;
 import room.Room;
 import weapon.Weapon;
+import gameCore.Render;
 
 public class Main {
     public static void main(String[] args) {

@@ -23,7 +23,7 @@ public abstract class Card {
         this.wasUsedToKill = wasUsedToKill;
     }
 
-    public boolean isWasUsedToKill() {
+    public boolean getWasUsedToKill() {
         return wasUsedToKill;
     }
 }

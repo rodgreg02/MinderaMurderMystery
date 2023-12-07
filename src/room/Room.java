@@ -39,7 +39,7 @@ public class Room extends Card {
         return name;
     }
 
-    public Object getClue() {
+    public Card getClueRoom() {
         return clue;
     }
 

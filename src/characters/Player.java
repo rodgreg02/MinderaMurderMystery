@@ -10,7 +10,6 @@ import java.util.List;
 public class Player {
 
     private final String name;
-    private final String emoji = "🕵🏽‍♂️️";
 
     List<Object> detectiveBag = new LinkedList<>();
 
@@ -22,7 +21,7 @@ public class Player {
     }
 
 
-    public void examine(Cards card){
+    public void examine(Card card){
 
     }
 
@@ -35,6 +34,7 @@ public class Player {
     }
 
     public String getEmoji() {
+        String emoji = "🕵🏽‍♂️️";
         return emoji;
     }
 }
