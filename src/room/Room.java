@@ -35,10 +35,6 @@ public class Room extends Card {
         rooms.add(pool);
     }
 
-    public String getName() {
-        return name;
-    }
-
     public Card getClueRoom() {
         return clue;
     }
