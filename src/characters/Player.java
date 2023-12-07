@@ -1,8 +1,8 @@
-package Characters;
+package characters;
 
-import GameCore.Cards;
-import Rooms.Room;
-import Weapons.Weapons;
+import gameCore.Card;
+import weapon.Weapon;
+import room.Room;
 
 import java.util.LinkedList;
 import java.util.List;

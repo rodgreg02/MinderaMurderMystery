@@ -1,18 +1,14 @@
-package GameCore;
+package gameCore;
 
 
-public abstract class Cards {
+public abstract class Card {
     public String name;
     public String clueSus;
     public String clueNonSus;
     public boolean wasUsedToKill;
 
-    public String getClueSus() {
-        return clueSus;
-    }
-
-    public String getClueNonSus() {
-        return clueNonSus;
+    public String getClue() {
+        return (this.wasUsedToKill)?clueSus:clueNonSus;
     }
 
     public String getName() {
