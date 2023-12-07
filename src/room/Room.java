@@ -43,16 +43,17 @@ public class Room extends Card {
         this.clue = clue;
     }
 
-    public static Room[] distributeClues(Room[] rooms, Card[] clues){
+    public static void distributeClues(Card[] clues){
 
-        for (int i = 0; i < rooms.length; i++) {
-            rooms[Game.randomNumberGenerator(7)].setClue(clues[i]);
+        for (int i = 0; i < rooms.size(); i++) {
+            rooms.get(Game.randomNumberGenerator(7)).setClue(clues[i]);
         }
-        return rooms;
+        return;
     }
 
     public static void chooseRandomRoomKill() {
         int valueRandom = (Game.randomNumberGenerator(7));
         Room.rooms.get(valueRandom).setWasUsedToKill(true);
     }
+
 }

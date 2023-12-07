@@ -1,27 +1,37 @@
 import characters.Character;
+import gameCore.Card;
 import gameCore.Game;
 import room.Room;
 import weapon.Weapon;
 import gameCore.Render;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
+        ArrayList<Card> allClues = new ArrayList<>();
+        Card[] selectedClues = new Card[8];
+
         Room.createMap();
         Room.chooseRandomRoomKill();
-      Render.drawRoom(Room.rooms.get(1));
-        for (int i = 0; i < Room.rooms.size(); i++) {
-            System.out.println(Room.rooms.get(i).getName() + " " + Room.rooms.get(i).wasUsedToKill);
-        }
+        allClues.addAll(Room.rooms);
+
         Character.createCharacters();
         Character.chooseRandomCharacterKill();
-        for (int i = 0; i < Character.suspects.size(); i++) {
-            System.out.println(Character.suspects.get(i).getName() + " " + Character.suspects.get(i).wasUsedToKill);
-        }
-    Weapon.createWeapons();
-        System.out.println("\n\n\n");
+        allClues.addAll(Character.suspects);
+
+        Weapon.createWeapons();
         Game.chooseRandomWeaponKill();
-        for (int i = 0; i < Weapon.arrayListWeapons.size(); i++) {
-            System.out.println(Weapon.arrayListWeapons.get(i).getWeaponName() + " " + Weapon.arrayListWeapons.get(i).wasUsedToKill());
+        allClues.addAll(Weapon.arrayListWeapons);
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < allClues.size(); j++) {
+                if (allClues.get(j).wasUsedToKill) {
+                    selectedClues[i] = allClues.get(j);
+                }
+            }
         }
+
+
     }
 }
