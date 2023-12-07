@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Card> allClues = new ArrayList<>();
-        Card[] selectedClues = new Card[8];
+        ArrayList<Card> selectedClues = new ArrayList<>();
 
         Room.createMap();
         Room.chooseRandomRoomKill();
@@ -25,13 +25,21 @@ public class Main {
         allClues.addAll(Weapon.arrayListWeapons);
 
         for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < allClues.size(); j++) {
-                if (allClues.get(j).wasUsedToKill) {
-                    selectedClues[i] = allClues.get(j);
+            for (Card allClue : allClues) {
+                if (allClue.wasUsedToKill && !(selectedClues.contains(allClue))) {
+                    selectedClues.add(allClue);
                 }
             }
         }
+        while (selectedClues.size() != 8) {
+            int randomClue = Game.randomNumberGenerator(21);
+            if (!allClues.get(randomClue).getWasUsedToKill() && !(selectedClues.contains(allClues.get(randomClue)))) {
+                selectedClues.add(allClues.get(randomClue));
+            }
 
-
+        }
+        for (Card selectedClue : selectedClues) {
+            System.out.println(selectedClue.getName() + " " + selectedClue.getClue()+ " " + selectedClue.getWasUsedToKill());
+        }
     }
 }
