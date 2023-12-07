@@ -15,13 +15,10 @@ public class Character extends Card {
         this.wasUsedToKill = false;
     }
 
-    public String isSuspectFound(Character characters){
-        return (characters.suspectFound) ? getTipGuilty() : getTipNotGuilty();
+    public String getSuspectClue(Character characters){
+        return (characters.wasUsedToKill) ? getTipGuilty() : getTipNotGuilty();
     }
 
-    public String getName() {
-        return name;
-    }
 
     public String getTipGuilty() {
         return clueSus;
@@ -37,9 +34,6 @@ public class Character extends Card {
 
 
     public static ArrayList<Character> suspects = new ArrayList<>();
-
-
-    static ArrayList<Character> suspects = new ArrayList<>();
 
     public static ArrayList<Character> createCharacters() {
 

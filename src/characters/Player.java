@@ -1,5 +1,7 @@
 package characters;
 
+import gameCore.Card;
+import weapon.Weapon;
 import room.Room;
 
 import java.util.LinkedList;
@@ -17,6 +19,11 @@ public class Player {
         System.out.println("Investigating...");
         System.out.println("You fond a " + room.getClue().toString());
         detectiveBag.add(room.getClue());
+    }
+
+
+    public void examine(Cards card){
+
     }
 
     public Player(String name) {

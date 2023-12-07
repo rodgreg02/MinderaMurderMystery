@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Room.createMap();
         Room.chooseRandomRoomKill();
+      Render.drawRoom(Room.rooms.get(1));
         for (int i = 0; i < Room.rooms.size(); i++) {
             System.out.println(Room.rooms.get(i).getName() + " " + Room.rooms.get(i).wasUsedToKill);
         }
