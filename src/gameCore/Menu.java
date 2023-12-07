@@ -1,12 +1,14 @@
 package gameCore;
 import characters.Player;
+import room.Room;
+
 import java.util.Scanner;
 
 public class Menu {
 
     Scanner scan = new Scanner(System.in);
 
-    public void mainMenu () {
+    public void mainMenu () throws InterruptedException {
         Scanner scan = new Scanner(System.in);
         boolean quitGame = false;
         while (!quitGame) {
@@ -27,11 +29,18 @@ public class Menu {
     }
 
 
-    private void gameMenu () {
+    private void gameMenu () throws InterruptedException {
         System.out.println("Insert the name of your detective: ");
         String detectiveName = scan.next();
         Player player = new Player(detectiveName);
+        Render.drawMap(Room.rooms);
+        Thread.sleep(5000);
+        cleanConsole();
         Story.startStory(player);
 
+    }
+
+    private void cleanConsole(){
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
 }
