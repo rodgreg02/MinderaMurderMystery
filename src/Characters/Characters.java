@@ -43,23 +43,23 @@ public class Characters {
     public static ArrayList<Characters> createCharacters() {
 
 
-        Characters Bruna = new Characters("Bruna", "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
-                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
+        Characters Bruna = new Characters("Bruna", "Thorough observation revealed suspicious stains. Blood in the photo? This clue is macabre, but essential to the investigation.",
+                "Did you find blood in the photo? I bet it's just a lighting trick or something.", false);
         Characters Francisco = new Characters("Francisco",
-                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
-                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
+                "In this photo, one piece of information turned out to be crucial. We've discovered a clue that takes us straight to the heart of the mystery!",
+                "Clues in a photo? This feels more like a movie than a real investigation.", false);
         Characters Fatima = new Characters("Fátima",
-                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
-                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
+                "The date on the edge of the photo is the key to connecting the events. This clue is a missing link we have found!" ,
+                "Data and time in the image? This can be easily manipulated. How can we trust this?", false);
         Characters Paulo = new Characters("Paulo",
-                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
-                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
+                "The location in the photograph is our next point of interest. This geographic clue will guide us in the search for the truth.",
+                "Data, locations and times can be manipulated. I need more solid evidence than that.", false);
         Characters David = new Characters("David",
-                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
-                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
-        Characters Rodrigo = new Characters("Rodrigo",
-                "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
-                "In the simplicity of truth, the light reveals a clear path, where innocence is the indisputable narrative.", false);
+                "When examining the exact time of the photo, we noticed something extraordinary. This clue is like a clock that ticks the mystery revealer!",
+                "This 'clue' seems more like a creative interpretation than a solid discovery.", false);
+        Characters Rodrigo = new Characters("Edgar",
+                "The location in the photo corresponds to a specific place. We're closer to solving the puzzle thanks to this clue!",
+                "Specific location in the photo? Or someone was simply traveling and decided to take a photo.", false);
 
         suspects.add(Bruna);
         suspects.add(Francisco);
