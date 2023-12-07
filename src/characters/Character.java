@@ -35,7 +35,7 @@ public class Character extends Card {
 
     public static ArrayList<Character> suspects = new ArrayList<>();
 
-    public static ArrayList<Character> createCharacters() {
+    public static void createCharacters() {
 
 
         Character Bruna = new Character("Bruna", "Sometimes the mask of innocence hides secrets, just as the shadow of guilt can cover the truth.",
@@ -63,7 +63,7 @@ public class Character extends Card {
         suspects.add(David);
         suspects.add(Rodrigo);
 
-        return suspects;
+        return;
     }
 
 
