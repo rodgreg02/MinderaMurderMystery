@@ -1,46 +1,41 @@
-package Characters;
+package characters;
 
 import java.util.ArrayList;
 
-public class Characters {
-    String name;
-    String tipGuilty;
-    String tipNotGuilty;
-    boolean suspectFound;
+import gameCore.Card;
+import gameCore.Game;
 
-    public Characters(String name, String tipGuilty, String tipNotGuilty, boolean suspectFound) {
+
+public class Character extends Card {
+
+    public Character(String name, String tipGuilty, String tipNotGuilty, boolean suspectFound) {
         this.name = name;
-        this.tipGuilty = tipGuilty;
-        this.tipNotGuilty = tipNotGuilty;
-        this.suspectFound = false;
+        this.clueSus = tipGuilty;
+        this.clueNonSus = tipNotGuilty;
+        this.wasUsedToKill = false;
     }
 
-    public String isSuspectFound(Characters characters){
-        return (characters.suspectFound) ? getTipGuilty() : getTipNotGuilty();
+    public String getSuspectClue(Character characters){
+        return (characters.wasUsedToKill) ? getClueGuilty() : getClueNotGuilty();
     }
 
-    public String getName() {
-        return name;
+
+    public String getClueGuilty() {
+        return clueSus;
     }
 
-    public String getTipGuilty() {
-        return tipGuilty;
+    public String getClueNotGuilty() {
+        return clueNonSus;
     }
 
-    public String getTipNotGuilty() {
-        return tipNotGuilty;
+    public boolean  getWasUsedToKill() {
+        return wasUsedToKill;
     }
 
-    public boolean isTipUsed() {
-        return suspectFound;
-    }
 
-    public void setTipUsed(boolean tipUsed) {
-        this.suspectFound = tipUsed;
-    }
+    public static ArrayList<Character> suspects = new ArrayList<>();
 
-    static ArrayList<Characters> suspects = new ArrayList<>();
-    public static ArrayList<Characters> createCharacters() {
+    public static void createCharacters() {
 
 
         Characters Bruna = new Characters("Bruna", "Thorough observation revealed suspicious stains. Blood in the photo? This clue is macabre, but essential to the investigation.",
@@ -68,6 +63,14 @@ public class Characters {
         suspects.add(David);
         suspects.add(Rodrigo);
 
-        return suspects;
+        return;
     }
+
+
+    public static void chooseRandomCharacterKill() {
+        int valueRandom = (Game.randomNumberGenerator(5));
+        Character.suspects.get(valueRandom).setWasUsedToKill(true);
+    }
+
+
 }
