@@ -63,7 +63,6 @@ public class Character extends Card {
         suspects.add(David);
         suspects.add(Rodrigo);
 
-        return;
     }
 
 
