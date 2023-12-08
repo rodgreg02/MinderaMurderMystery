@@ -2,8 +2,8 @@ package characters;
 
 import java.util.ArrayList;
 
-import gameCore.Card;
-import gameCore.Game;
+import gamecore.Card;
+import gamecore.Game;
 
 
 public class Character extends Card {

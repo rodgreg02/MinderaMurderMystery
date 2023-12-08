@@ -1,9 +1,6 @@
 import characters.Character;
-import characters.Player;
-import gameCore.Card;
-import gameCore.Game;
-import gameCore.Menu;
-import gameCore.Render;
+import gamecore.Card;
+import gamecore.Game;
 import room.Room;
 import weapon.Weapon;
 

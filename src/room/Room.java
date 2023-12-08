@@ -1,6 +1,6 @@
 package room;
-import gameCore.Game;
-import gameCore.Card;
+import gamecore.Game;
+import gamecore.Card;
 
 import java.util.ArrayList;
 

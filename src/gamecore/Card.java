@@ -1,4 +1,4 @@
-package gameCore;
+package gamecore;
 
 
 public abstract class Card {
