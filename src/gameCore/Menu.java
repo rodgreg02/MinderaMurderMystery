@@ -55,15 +55,16 @@ public class Menu {
         while (!leaveMission) {
             System.out.println("You are in " + rooms.get(currentPosition).getName());
             Render.drawRoom(rooms.get(currentPosition));
-            System.out.println("1=> Examine");
+            System.out.println("1=> Investigate");
             System.out.println("2=> Next Room");
             System.out.println("3=> Previous Room");
-            System.out.println("4=> Quit");
+            System.out.println("4=> Check Inventory");
+            System.out.println("5=> Quit");
             String option = scan.next();
 
             switch (option) {
                 case "1":
-                    player.examine(rooms.get(currentPosition));
+                    player.investigate(rooms.get(currentPosition));
                     break;
 
                 case "2":
@@ -73,8 +74,11 @@ public class Menu {
                 case "3":
                     walkToPreviousRoom(rooms);
                     break;
+                case "4":
+                    player.checkInventory();
+                    break;
 
-                case "4": leaveMission = true;
+                case "5": leaveMission = true;
                 default:
                     System.out.println("Invalid Input");
             }

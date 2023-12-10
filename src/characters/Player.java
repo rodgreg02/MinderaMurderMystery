@@ -25,10 +25,17 @@ public class Player {
         Thread.sleep(1000);
         System.out.println(".");
         Thread.sleep(1000);
-        System.out.println(room.getClues().getName());
+        System.out.println("You found " + room.getClues().getName());
 
-
-
+        System.out.println("1 - Examine item.");
+        System.out.println("2 - Keep investigating");
+        String option = scan.next();
+        if (option.equals("1")){
+            examine(room);
+        }
+        if (!option.equals("1") && !option.equals("2")){
+            System.out.println("Invalid Input");
+        }
 
     }
 
@@ -41,11 +48,16 @@ public class Player {
         System.out.println(".");
         Thread.sleep(1000);
         System.out.println(room.getClueObject());
-
-
-
+        detectiveBag.add(room.getClueObject());
     }
 
+    public void checkInventory(){
+        if(detectiveBag.isEmpty()){
+            System.out.println("Your bag is Empty!!");
+        }
+        System.out.println("== Detective Bag ==");
+       detectiveBag.forEach(System.out::println);
+    }
 
 
 
