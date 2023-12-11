@@ -1,7 +1,7 @@
 package weapon;
 
 import java.util.ArrayList;
-import gameCore.Card;
+import gamecore.Card;
 
 public class Weapon extends Card {
 

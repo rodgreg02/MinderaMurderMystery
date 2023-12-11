@@ -1,4 +1,4 @@
-package gameCore;
+package gamecore;
 
 import characters.Player;
 
