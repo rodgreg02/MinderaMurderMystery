@@ -37,12 +37,30 @@ public class Weapon extends Card {
 
 
     public static void createWeapons() {
-        Weapon knife = new Weapon("Knife", "This Knife is poorly clean", "This Knife is clean", false);
-        Weapon pistol = new Weapon("Pistol", "This Pistol is poorly clean", "This Pistol is clean", false);
-        Weapon pipe = new Weapon("Pipe", "This Pipe is poorly clean", "This Pipe is clean", false);
-        Weapon chandelier = new Weapon("Chandelier", "This Chandelier is poorly clean", "This Chandelier is clean", false);
-        Weapon rope = new Weapon("Rope", "This Rope is poorly clean", "This Rope is clean", false);
-        Weapon hammer = new Weapon("Hammer", "This Hammer is poorly clean", "This Hammer is clean", false);
+        Weapon knife = new Weapon("Knife",
+                "The knife, with traces of dried blood, was hidden behind some books on the shelf.",
+                "The knife's sharp blade was carefully stored in a wooden box, like a precious relic.",
+                false);
+        Weapon pistol = new Weapon("Pistol",
+                "An abandoned pistol, still smoking, rested on the table, an instrument of sinister purpose.",
+                "The pistol, polished to a shine, rested inside its velvet case, a silent witness to the last time it was used.",
+                false);
+        Weapon pipe = new Weapon("Pipe",
+                "The pipe, now used as a weapon, was lying on the floor, revealing a history of violence.",
+                "The metallic pipe hung neatly on the wall, a piece of decoration that denoted class rather than violence.",
+                false);
+        Weapon chandelier = new Weapon("Chandelier",
+                "Fragments of wax scattered across the carpet testified to the chandelier's transformation from adornment to lethal instrument.",
+                "The perfectly polished crystal chandelier hung majestically in the center of the room, a suspended work of art.",
+                false);
+        Weapon rope = new Weapon("Rope",
+                "Marks of rough use on the rope suggested that it had been wrapped around hands shaking with fear.",
+                "The sailor's rope, perfectly coiled, was stored in the toolbox, a tool of utility, not crime.",
+                false);
+        Weapon hammer = new Weapon("Hammer",
+                "The destroyed hammer, a tool now stained by crime, lay in a dark corner of the room.",
+                "The carpenter's hammer rested on his workbench, a tool worthy of construction, not destruction.",
+                false);
 
         arrayListWeapons.add(knife);
         arrayListWeapons.add(pistol);

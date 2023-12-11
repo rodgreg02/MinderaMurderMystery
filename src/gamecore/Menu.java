@@ -1,4 +1,5 @@
 package gamecore;
+
 import characters.Player;
 import room.Room;
 
@@ -12,8 +13,7 @@ public class Menu {
     Player player = new Player(detectiveName);
 
 
-    public void mainMenu () throws InterruptedException {
-        Scanner scan = new Scanner(System.in);
+    public void mainMenu() throws InterruptedException {
         boolean quitGame = false;
         while (!quitGame) {
             System.out.println("==== Welcome to MinderaMurderMystery Game ====");
@@ -32,7 +32,7 @@ public class Menu {
         }
     }
 
-    private void storyMenu () throws InterruptedException {
+    private void storyMenu() throws InterruptedException {
         System.out.println("Insert the name of your detective: ");
         detectiveName = scan.next();
         Render.drawMap(Room.rooms);
@@ -45,21 +45,21 @@ public class Menu {
     }
 
 
-
     private int currentPosition = 0;
 
 
     private void gameMenu(ArrayList<Room> rooms) throws InterruptedException {
         Scanner scan = new Scanner(System.in);
+
         boolean leaveMission = false;
         while (!leaveMission) {
+
             System.out.println("You are in " + rooms.get(currentPosition).getName());
             Render.drawRoom(rooms.get(currentPosition));
-            System.out.println("1=> Investigate");
-            System.out.println("2=> Next Room");
-            System.out.println("3=> Previous Room");
-            System.out.println("4=> Check Inventory");
-            System.out.println("5=> Quit");
+
+            menu();
+
+            System.out.println("0=> Quit");
             String option = scan.next();
 
             switch (option) {
@@ -77,39 +77,72 @@ public class Menu {
                 case "4":
                     player.checkInventory();
                     break;
-
-                case "5": leaveMission = true;
+                case "5":
+                    finalEnd(rooms);
+                    break;
+                case "0":
+                    leaveMission = true;
                 default:
                     System.out.println("Invalid Input");
             }
         }
     }
 
+    private void menu() {
+        System.out.println("1=> Investigate");
+        System.out.println("2=> Next Room");
+        System.out.println("3=> Previous Room");
+        System.out.println("4=> Check Inventory");
+        if (currentPosition >= 5) {
+            System.out.println("5=> Go to the Pool");
+        }
+
+    }
+
     private void walkToNextRoom(ArrayList<Room> rooms) throws InterruptedException {
         System.out.print("Walking.");
         Thread.sleep(1000);
-        System.out.println(".");
+        System.out.print(".");
         Thread.sleep(1000);
-        System.out.println(".");
-        rooms.get(currentPosition+1);
+        System.out.print(".");
+        rooms.get(currentPosition + 1);
         currentPosition++;
     }
+
     private void walkToPreviousRoom(ArrayList<Room> rooms) throws InterruptedException {
         System.out.print("Walking.");
         Thread.sleep(1000);
         System.out.println(".");
         Thread.sleep(1000);
         System.out.println(".");
-        rooms.get(currentPosition-1);
+        rooms.get(currentPosition - 1);
         currentPosition--;
 
     }
 
+    private boolean checkIfPossibleGuess(ArrayList<Room> rooms) {
+        String option = scan.next();
+        if (option.equals("5")) {
+            finalEnd(rooms);
+        }
 
-    private void cleanConsole(){
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\n\n\n\n\n\n\n");
+        return false;
     }
 
+    private void finalEnd(ArrayList<Room> rooms) {
+        currentPosition = 8;
+        System.out.println("You are in " + rooms.get(currentPosition).getName());
+        Render.drawRoom(rooms.get(currentPosition));
+        player.checkInventory();
+    }
+
+    private int checkGuessFromDetective() {
+        return 0;
+    }
+
+    private void cleanConsole() {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    }
 
 
 }
