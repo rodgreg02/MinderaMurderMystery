@@ -1,5 +1,6 @@
 package gamecore;
 
+import characters.CharactersEnding;
 import characters.Player;
 import room.Room;
 
@@ -16,6 +17,7 @@ public class Menu {
     public void mainMenu() throws InterruptedException {
         boolean quitGame = false;
         while (!quitGame) {
+            CharactersEnding.charactersEnding();
             System.out.println("==== Welcome to MinderaMurderMystery Game ====");
             System.out.println("1 => Play");
             System.out.println("2 => Exit");
@@ -61,7 +63,6 @@ public class Menu {
 
             System.out.println("0=> Quit");
             String option = scan.next();
-
             switch (option) {
                 case "1":
                     player.investigate(rooms.get(currentPosition));

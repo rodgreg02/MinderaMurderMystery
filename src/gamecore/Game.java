@@ -2,6 +2,7 @@ package gamecore;
 
 import characters.Character;
 import weapon.Weapon;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -28,18 +29,18 @@ public class Game {
 
     static ArrayList<Character> suspects = new ArrayList<>();
 
-    public int numbRandomSuspects(int numbRandom){
+    public int numbRandomSuspects(int numbRandom) {
         Random random = new Random();
         return random.nextInt(numbRandom);
     }
 
-    public void chooseRandomSuspect(){
+    public void chooseRandomSuspect() {
         int randomSuspects = (numbRandomSuspects(6));
         suspects.get(randomSuspects).setWasUsedToKill(true);
         System.out.println(suspects.get(randomSuspects).getName());
     }
 
-    public  static ArrayList<Card> selectClues(ArrayList<Card> allClues){
+    public static ArrayList<Card> selectClues(ArrayList<Card> allClues) {
         ArrayList<Card> selectedClues = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             for (Card allClue : allClues) {
@@ -57,6 +58,5 @@ public class Game {
         }
         return selectedClues;
     }
-
 
 }

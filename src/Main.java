@@ -10,8 +10,6 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         ArrayList<Card> allClues = new ArrayList<>();
         ArrayList<Card> selectedClues = new ArrayList<>();
-
-
         Room.createMap();
         Room.chooseRandomRoomKill();
         Character.createCharacters();
