@@ -16,7 +16,7 @@ public class Player {
         System.out.println("Investigating...");
         System.out.println(room.getClueRoom());
         System.out.println("Press any key to continue");
-        String anykey = scan.next();
+        String anykey = scan.nextLine();
         System.out.print("Continue Investigating.");
         Thread.sleep(1000);
         System.out.print(".");
