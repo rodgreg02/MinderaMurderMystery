@@ -48,7 +48,7 @@ public class Player {
         System.out.println(".");
         Thread.sleep(1000);
         System.out.println(room.getClueObject());
-        detectiveBag.add(room.getClueObject());
+        detectiveBag.add(room.getClues().getName());
     }
 
     public void checkInventory(){

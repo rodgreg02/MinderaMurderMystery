@@ -72,4 +72,6 @@ public class Room extends Card {
     public Card getClues() {
         return clue;
     }
+
+
 }
