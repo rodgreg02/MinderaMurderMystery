@@ -3,6 +3,9 @@ package gamecore;
 import characters.Player;
 import room.Room;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,7 +16,7 @@ public class Menu {
     Player player = new Player(detectiveName);
 
 
-    public void mainMenu() throws InterruptedException {
+    public void mainMenu() throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
         boolean quitGame = false;
         while (!quitGame) {
             System.out.println("==== Welcome to MinderaMurderMystery Game ====");
@@ -32,13 +35,13 @@ public class Menu {
         }
     }
 
-    private void storyMenu() throws InterruptedException {
+    private void storyMenu() throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
         System.out.println("Insert the name of your detective: ");
         detectiveName = scan.next();
         Render.drawMap(Room.rooms);
         Thread.sleep(5000);
         cleanConsole();
-        Story.startStory(player);
+        Story.printWithDelay(Story.startStory(player));
         Thread.sleep(2000);
         gameMenu(Room.rooms);
 
