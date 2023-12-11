@@ -1,9 +1,6 @@
 import characters.Character;
-import characters.Player;
-import gameCore.Card;
-import gameCore.Game;
-import gameCore.Menu;
-import gameCore.Render;
+import gamecore.Card;
+import gamecore.Game;
 import room.Room;
 import weapon.Weapon;
 
@@ -12,7 +9,6 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         ArrayList<Card> allClues = new ArrayList<>();
-        ArrayList<Card> selectedClues = new ArrayList<>();
 
         Room.createMap();
         Room.chooseRandomRoomKill();
