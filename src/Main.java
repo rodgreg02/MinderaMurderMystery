@@ -11,6 +11,7 @@ public class Main {
         ArrayList<Card> allClues = new ArrayList<>();
         ArrayList<Card> selectedClues = new ArrayList<>();
 
+
         Room.createMap();
         Room.chooseRandomRoomKill();
         Character.createCharacters();
