@@ -1,11 +1,9 @@
 package characters;
 
-import gameCore.Card;
-import weapon.Weapon;
 import room.Room;
-
-import java.util.*;
-
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
 public class Player {
 
     private final String name;
