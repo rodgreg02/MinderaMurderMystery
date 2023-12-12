@@ -1,8 +1,12 @@
 package gamecore;
 
+import characters.CharactersEnding;
 import characters.Player;
 import room.Room;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,12 +15,13 @@ public class Menu {
     Scanner scan = new Scanner(System.in);
     private String detectiveName = "";
     Player player = new Player(detectiveName);
+    SoundTrackSystem soundTrackSystem1 = new SoundTrackSystem();
 
 
-    public void mainMenu() throws InterruptedException {
+    public void mainMenu() throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
+        soundTrackSystem1.heartBeatSound();
         boolean quitGame = false;
         while (!quitGame) {
-            Game.finalEnd(player);
             System.out.println("==== Welcome to MinderaMurderMystery Game ====");
             System.out.println("1 => Play");
             System.out.println("2 => Exit");
@@ -33,15 +38,20 @@ public class Menu {
         }
     }
 
-    private void storyMenu() throws InterruptedException {
+    private void storyMenu() throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
+        SoundTrackSystem soundTrackSystem = new SoundTrackSystem();
+        soundTrackSystem.policeSound();
         System.out.println("Insert the name of your detective: ");
         detectiveName = scan.next();
         Render.drawMap(Room.rooms);
         Thread.sleep(5000);
         cleanConsole();
-        Story.startStory(player);
+        Story.printWithDelay(Story.startStory(player));
         Thread.sleep(2000);
+        soundTrackSystem.stop();
+        soundTrackSystem1.stop();
         gameMenu(Room.rooms);
+
 
     }
 
@@ -49,7 +59,10 @@ public class Menu {
     private int currentPosition = 0;
 
 
-    private void gameMenu(ArrayList<Room> rooms) throws InterruptedException {
+    private void gameMenu(ArrayList<Room> rooms) throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
+        SoundTrackSystem soundTrackSystem = new SoundTrackSystem();
+
+        soundTrackSystem.backgroundMusicSurvivalFirst();
         Scanner scan = new Scanner(System.in);
 
         boolean leaveMission = false;
@@ -62,7 +75,6 @@ public class Menu {
 
             System.out.println("0=> Quit");
             String option = scan.next();
-
             switch (option) {
                 case "1":
                     player.investigate(rooms.get(currentPosition));

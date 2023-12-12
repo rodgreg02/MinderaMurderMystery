@@ -5,6 +5,9 @@ import characters.Player;
 import room.Room;
 import weapon.Weapon;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -12,9 +15,21 @@ import java.util.SortedMap;
 
 public class Game {
     static Scanner scan = new Scanner(System.in);
-    Menu menu = new Menu();
 
-    public void startGame() throws InterruptedException {
+    Menu menu = new Menu();
+    SoundTrackSystem soundTrackSystem = new SoundTrackSystem();
+    public void startGame() throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
+        ArrayList<Card> allClues = new ArrayList<>();
+        ArrayList<Card> selectedClues = new ArrayList<>();
+        Room.createMap();
+        Room.chooseRandomRoomKill();
+        Character.createCharacters();
+        Character.chooseRandomCharacterKill();
+        allClues.addAll(Character.suspects);
+        Weapon.createWeapons();
+        Game.chooseRandomWeaponKill();
+        allClues.addAll(Weapon.arrayListWeapons);
+        Room.distributeClues(allClues);
         menu.mainMenu();
     }
 
@@ -61,6 +76,8 @@ public class Game {
         }
         return selectedClues;
     }
+    
+
 
     static void finalEnd(Player player) {
         System.out.println("\tAll the suspects items\t\t| All the weapon's clues\t  | Room's Name");
@@ -100,5 +117,25 @@ public class Game {
         System.out.println("Where was the crime room?");
         System.out.print("=> ");
         String roomGuess = scan.next();
+}
+  
+  public static void charactersEnding() {
+        System.out.print("It was during the night that ");
+        int counter = 0;
+        boolean seeIfCounterMax = false;
+        for (int i = 0; i < 6; i++) {
+            if (Character.suspects.get(i).getWasUsedToKill()) {
+                System.out.print(Character.suspects.get(i).getName() + " used a ");
+            }
+            if (Weapon.arrayListWeapons.get(i).getWasUsedToKill()) {
+                System.out.print(Weapon.arrayListWeapons.get(i).getName() + " to kill Flávio in the ");
+            }
+        }
+        for (int i = 0; i < Room.rooms.size(); i++) {
+            if(Room.rooms.get(i).getWasUsedToKill()){
+                System.out.print(Room.rooms.get(i).getName());
+            }
+        }
+        System.out.println();
     }
 }
