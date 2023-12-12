@@ -1,17 +1,17 @@
 package gamecore;
 
 import characters.Character;
+import characters.Player;
 import room.Room;
 import weapon.Weapon;
-
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
-
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.SortedMap;
 
 public class Game {
     static Scanner scan = new Scanner(System.in);
@@ -76,11 +76,53 @@ public class Game {
         }
         return selectedClues;
     }
-    public static void charactersEnding() {
+    
+
+
+    static void finalEnd(Player player) {
+        System.out.println("\tAll the suspects items\t\t| All the weapon's clues\t  | Room's Name");
+        System.out.println("\t+—————————————————————————————————————————————————————————————————————+");
+
+        for (int i = 0; i < Room.rooms.size(); i++) {
+            String formatString = "\t%-" + (27) + "s | %-" + (27) + "s | %s";
+
+            String suspectsInString;
+            String weaponsInString;
+            if (i < Character.suspects.size()) {
+                suspectsInString = Character.suspects.get(i).getName();
+            } else suspectsInString = " ";
+
+            if (i < Weapon.arrayListWeapons.size()) {
+                weaponsInString = Weapon.arrayListWeapons.get(i).getName();
+            } else weaponsInString = " ";
+
+            System.out.println(String.format(formatString,
+                    suspectsInString,
+                    weaponsInString,
+                    Room.rooms.get(i).getName()));
+        }
+        System.out.println("\t+—————————————————————————————————————————————————————————————————————+");
+        System.out.println("\n");
+
+        System.out.println("Your clues");
+        player.checkInventory();
+        System.out.println();
+        System.out.println("Your guess...");
+        System.out.println("Who is the guilty (only name)");
+        System.out.print("=> ");
+        String nameGuess = scan.next();
+        System.out.println("What weapon was used?");
+        System.out.print("=> ");
+        String weaponGuess = scan.next();
+        System.out.println("Where was the crime room?");
+        System.out.print("=> ");
+        String roomGuess = scan.next();
+}
+  
+  public static void charactersEnding() {
         System.out.print("It was during the night that ");
         int counter = 0;
         boolean seeIfCounterMax = false;
-
         for (int i = 0; i < 6; i++) {
             if (Character.suspects.get(i).getWasUsedToKill()) {
                 System.out.print(Character.suspects.get(i).getName() + " used a ");

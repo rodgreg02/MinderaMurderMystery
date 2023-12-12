@@ -7,9 +7,7 @@ import java.util.Scanner;
 public class Player {
 
     private final String name;
-
     List<Object> detectiveBag = new LinkedList<>();
-
 
     public void investigate(Room room) throws InterruptedException {
         Scanner scan = new Scanner(System.in);
@@ -37,7 +35,6 @@ public class Player {
 
     }
 
-
     public void examine(Room room) throws InterruptedException {
         System.out.print("Examining the " + room.getClues().getName()+"");
         Thread.sleep(1000);
@@ -56,8 +53,6 @@ public class Player {
         System.out.println("== Detective Bag ==");
        detectiveBag.forEach(System.out::println);
     }
-
-
 
     public Player(String name) {
         this.name = name;

@@ -22,7 +22,6 @@ public class Menu {
         soundTrackSystem1.heartBeatSound();
         boolean quitGame = false;
         while (!quitGame) {
-            CharactersEnding.charactersEnding();
             System.out.println("==== Welcome to MinderaMurderMystery Game ====");
             System.out.println("1 => Play");
             System.out.println("2 => Exit");
@@ -80,11 +79,9 @@ public class Menu {
                 case "1":
                     player.investigate(rooms.get(currentPosition));
                     break;
-
                 case "2":
                     walkToNextRoom(rooms);
                     break;
-
                 case "3":
                     walkToPreviousRoom(rooms);
                     break;
@@ -92,7 +89,7 @@ public class Menu {
                     player.checkInventory();
                     break;
                 case "5":
-                    finalEnd(rooms);
+                    checkIfPossibleGuess();
                     break;
                 case "0":
                     leaveMission = true;
@@ -134,21 +131,14 @@ public class Menu {
 
     }
 
-    private boolean checkIfPossibleGuess(ArrayList<Room> rooms) {
+    private void checkIfPossibleGuess() {
         String option = scan.next();
         if (option.equals("5")) {
-            finalEnd(rooms);
+            currentPosition = 8;
+            Game.finalEnd(player);
         }
-
-        return false;
     }
 
-    private void finalEnd(ArrayList<Room> rooms) {
-        currentPosition = 8;
-        System.out.println("You are in " + rooms.get(currentPosition).getName());
-        Render.drawRoom(rooms.get(currentPosition));
-        player.checkInventory();
-    }
 
     private int checkGuessFromDetective() {
         return 0;
@@ -157,6 +147,4 @@ public class Menu {
     private void cleanConsole() {
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
-
-
 }
