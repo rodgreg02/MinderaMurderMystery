@@ -89,7 +89,8 @@ public class Menu {
                     player.checkInventory();
                     break;
                 case "5":
-                    checkIfPossibleGuess();
+                    scan.reset();
+                    checkIfPossibleGuess(option);
                     break;
                 case "0":
                     leaveMission = true;
@@ -107,7 +108,6 @@ public class Menu {
         if (currentPosition >= 5) {
             System.out.println("5=> Go to the Pool");
         }
-
     }
 
     private void walkToNextRoom(ArrayList<Room> rooms) throws InterruptedException {
@@ -131,17 +131,11 @@ public class Menu {
 
     }
 
-    private void checkIfPossibleGuess() {
-        String option = scan.next();
+    private void checkIfPossibleGuess(String option) {
         if (option.equals("5")) {
             currentPosition = 8;
             Game.finalEnd(player);
         }
-    }
-
-
-    private int checkGuessFromDetective() {
-        return 0;
     }
 
     private void cleanConsole() {
