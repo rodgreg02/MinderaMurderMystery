@@ -18,7 +18,6 @@ public class CharactersEnding {
             if (Weapon.arrayListWeapons.get(i).getWasUsedToKill()) {
                 System.out.print(Weapon.arrayListWeapons.get(i).getName() + " to kill Flávio in that room");
             }
-
         }
         System.out.println();
     }
