@@ -11,13 +11,13 @@ public class Story {
         System.out.println("\t\t\t\t\tMindera Murder Mystery");
 
         String storyText = """
-                \tNuma noite o detetive""" + " " + player.getName() + """
-                  foi chamado para um caso complicado.
-                \tA policia ligou-lhe para ir a casa do Sr Flávio pois o mesmo foi assassinado.
-                \tA policia precisa da sua ajuda para resolver o caso pois:
-                \t-Todos os suspeitos se dizem "inocentes" e não encontram provas em contrario;
-                \t-Todos os lugares da casa foram limpos pela equipa de limpeza antes do tempo;
-                \t-A policia também não consegue encontrar a arma do crime.
+                \tOne night the detective""" + " " + player.getName() + """
+                  was called to a complicated case.
+                \tThe police called you to go to Mr. Flavio's house because he had been murdered.
+                \tThe police need your help to solve the case:
+                \t-All the suspects say they are "innocent" and they can't find any evidence to the contrary;
+                \t-Everywhere in the house has been cleaned by the cleaning team ahead of time;
+                \t-The police can't find the murder weapon either.
                 """;
 
         return storyText;

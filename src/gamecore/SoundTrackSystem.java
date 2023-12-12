@@ -16,6 +16,16 @@ public class SoundTrackSystem {
         clip.loop(10);
         clip.start();
     }
+    public void sirenPurgeSound() throws LineUnavailableException, UnsupportedAudioFileException, IOException {
+
+        clip = AudioSystem.getClip();
+        File file = new File("resources/sirenPurgeSound.wav");
+        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
+        clip.open(audioInputStream);
+        clip.loop(10);
+        clip.start();
+    }
+
 
     public void keyboardSound() throws LineUnavailableException, UnsupportedAudioFileException, IOException {
 

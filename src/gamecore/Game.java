@@ -16,6 +16,8 @@ public class Game {
 
     Menu menu = new Menu();
     SoundTrackSystem soundTrackSystem = new SoundTrackSystem();
+    SoundTrackSystem soundTrackSystem2 = new SoundTrackSystem();
+
     public void startGame() throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
         ArrayList<Card> allClues = new ArrayList<>();
         ArrayList<Card> selectedClues = new ArrayList<>();

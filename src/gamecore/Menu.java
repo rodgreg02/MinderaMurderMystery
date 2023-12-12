@@ -13,12 +13,14 @@ public class Menu {
 
     Scanner scan = new Scanner(System.in);
     private String detectiveName = "";
-    Player player = new Player(detectiveName);
+    Player player;
     SoundTrackSystem soundTrackSystem1 = new SoundTrackSystem();
+    SoundTrackSystem soundTrackSystem2 = new SoundTrackSystem();
 
 
     public void mainMenu() throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
         soundTrackSystem1.heartBeatSound();
+        soundTrackSystem2.sirenPurgeSound();
         boolean quitGame = false;
         while (!quitGame) {
             System.out.println("==== Welcome to MinderaMurderMystery Game ====");
@@ -42,6 +44,7 @@ public class Menu {
         soundTrackSystem.policeSound();
         System.out.println("Insert the name of your detective: ");
         detectiveName = scan.next();
+        player = new Player(detectiveName);
         Render.drawMap(Room.rooms);
         Thread.sleep(5000);
         cleanConsole();
@@ -49,9 +52,8 @@ public class Menu {
         Thread.sleep(2000);
         soundTrackSystem.stop();
         soundTrackSystem1.stop();
+        soundTrackSystem2.stop();
         gameMenu(Room.rooms);
-
-
     }
 
 
