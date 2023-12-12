@@ -45,7 +45,8 @@ public class Menu {
         SoundTrackSystem soundTrackSystem = new SoundTrackSystem();
         soundTrackSystem.policeSound();
         System.out.println("Insert the name of your detective: ");
-        player.setName(scan.next());
+        String detectiveName = scan.next();
+        player = new Player(detectiveName);
         Render.drawMap(Room.rooms);
         Thread.sleep(5000);
         cleanConsole();
