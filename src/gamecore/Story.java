@@ -2,20 +2,41 @@ package gamecore;
 
 import characters.Player;
 
-public class Story {
-    static void startStory(Player player) {
-        System.out.println("\t\t\t\t\tMindera Murder Mystery");
-        System.out.println("""
-                \tNuma noite o detetive""" + " " + player.getName() + """
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 
+public class Story {
+    static String startStory(Player player) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        System.out.println("\t\t\t\t\tMindera Murder Mystery");
+
+        String storyText = """
+                \tNuma noite o detetive""" + " " + player.getName() + """
                   foi chamado para um caso complicado.
                 \tA policia ligou-lhe para ir a casa do Sr Flávio pois o mesmo foi assassinado.
-                                
                 \tA policia precisa da sua ajuda para resolver o caso pois:
                 \t-Todos os suspeitos se dizem "inocentes" e não encontram provas em contrario;
                 \t-Todos os lugares da casa foram limpos pela equipa de limpeza antes do tempo;
                 \t-A policia também não consegue encontrar a arma do crime.
-                """);
+                """;
+
+        return storyText;
+    }
+
+    public static void printWithDelay(String text) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        SoundTrackSystem soundTrackSystem = new SoundTrackSystem();
+        soundTrackSystem.keyboardSound();
+
+        try {
+            for (char c : text.toCharArray()) {
+                System.out.print(c);
+                Thread.sleep(0100); // Sleep for 1 second (1000 milliseconds)
+            }
+            System.out.println(); // Move to the next line after printing the text
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        soundTrackSystem.stop();
     }
 
     static void goodEnding() {
