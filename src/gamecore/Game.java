@@ -4,9 +4,11 @@ import characters.Character;
 import room.Room;
 import weapon.Weapon;
 
+
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -45,18 +47,18 @@ public class Game {
 
     static ArrayList<Character> suspects = new ArrayList<>();
 
-    public int numbRandomSuspects(int numbRandom){
+    public int numbRandomSuspects(int numbRandom) {
         Random random = new Random();
         return random.nextInt(numbRandom);
     }
 
-    public void chooseRandomSuspect(){
+    public void chooseRandomSuspect() {
         int randomSuspects = (numbRandomSuspects(6));
         suspects.get(randomSuspects).setWasUsedToKill(true);
         System.out.println(suspects.get(randomSuspects).getName());
     }
 
-    public  static ArrayList<Card> selectClues(ArrayList<Card> allClues){
+    public static ArrayList<Card> selectClues(ArrayList<Card> allClues) {
         ArrayList<Card> selectedClues = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             for (Card allClue : allClues) {
@@ -74,6 +76,24 @@ public class Game {
         }
         return selectedClues;
     }
+    public static void charactersEnding() {
+        System.out.print("It was during the night that ");
+        int counter = 0;
+        boolean seeIfCounterMax = false;
 
-
+        for (int i = 0; i < 6; i++) {
+            if (Character.suspects.get(i).getWasUsedToKill()) {
+                System.out.print(Character.suspects.get(i).getName() + " used a ");
+            }
+            if (Weapon.arrayListWeapons.get(i).getWasUsedToKill()) {
+                System.out.print(Weapon.arrayListWeapons.get(i).getName() + " to kill Flávio in the ");
+            }
+        }
+        for (int i = 0; i < Room.rooms.size(); i++) {
+            if(Room.rooms.get(i).getWasUsedToKill()){
+                System.out.print(Room.rooms.get(i).getName());
+            }
+        }
+        System.out.println();
+    }
 }
