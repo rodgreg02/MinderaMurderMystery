@@ -13,7 +13,6 @@ import java.util.Scanner;
 public class Menu {
 
     Scanner scan = new Scanner(System.in);
-    private String detectiveName = "";
     Player player;
     SoundTrackSystem soundTrackSystem1 = new SoundTrackSystem();
     SoundTrackSystem soundTrackSystem2 = new SoundTrackSystem();
@@ -46,8 +45,7 @@ public class Menu {
         SoundTrackSystem soundTrackSystem = new SoundTrackSystem();
         soundTrackSystem.policeSound();
         System.out.println("Insert the name of your detective: ");
-        detectiveName = scan.next();
-        player = new Player(detectiveName);
+        player.setName(scan.next());
         Render.drawMap(Room.rooms);
         Thread.sleep(5000);
         cleanConsole();

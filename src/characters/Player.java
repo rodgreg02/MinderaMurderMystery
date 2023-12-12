@@ -6,7 +6,11 @@ import java.util.List;
 import java.util.Scanner;
 public class Player {
 
-    private final String name;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    private  String name;
     List<Object> detectiveBag = new LinkedList<>();
 
     public void investigate(Room room) throws InterruptedException {
