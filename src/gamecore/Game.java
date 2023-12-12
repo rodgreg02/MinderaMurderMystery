@@ -100,6 +100,5 @@ public class Game {
         System.out.println("Where was the crime room?");
         System.out.print("=> ");
         String roomGuess = scan.next();
-
     }
 }
