@@ -2,6 +2,10 @@ package gamecore;
 
 import characters.Character;
 import weapon.Weapon;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -9,8 +13,8 @@ import java.util.Scanner;
 public class Game {
     static Scanner scan = new Scanner(System.in);
     Menu menu = new Menu();
-
-    public void startGame() throws InterruptedException {
+    SoundTrackSystem soundTrackSystem = new SoundTrackSystem();
+    public void startGame() throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
         menu.mainMenu();
     }
 
