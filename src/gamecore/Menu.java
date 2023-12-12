@@ -131,8 +131,13 @@ public class Menu {
         System.out.println(".");
         Thread.sleep(1000);
         System.out.println(".");
-        rooms.get(currentPosition - 1);
-        currentPosition--;
+        try {
+            rooms.get(currentPosition - 1);
+            currentPosition--;
+        } catch (IndexOutOfBoundsException e){
+            System.out.println("You abandoned the mission");
+            System.exit(0);
+        }
 
     }
 
