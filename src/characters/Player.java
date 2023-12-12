@@ -43,7 +43,11 @@ public class Player {
         System.out.println(".");
         Thread.sleep(1000);
         System.out.println(room.getClueObject());
-        detectiveBag.add(room.getClues().getName()+ " - " +room.getClueObject());
+        if (!detectiveBag.contains(room.getClues().getName() + " - " + room.getClueObject())) {
+            detectiveBag.add(room.getClues().getName() + " - " + room.getClueObject());
+        } else{
+            System.out.println("Already have this object in your bag!!");
+        }
     }
 
     public void checkInventory(){
