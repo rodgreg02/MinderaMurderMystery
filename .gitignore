@@ -27,8 +27,13 @@
 .idea/**/dictionaries
 .idea/**/shelf
 
+MinderaMurderMystery.iml
+.idea/codeStyles/Project.xml
+
 # AWS User-specific
 .idea/**/aws.xml
+.idea/codeStyles/codeStyleConfig.xml
+
 
 # Generated files
 .idea/**/contentModel.xml
