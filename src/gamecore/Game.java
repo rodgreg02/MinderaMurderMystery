@@ -15,7 +15,6 @@ public class Game {
     Menu menu = new Menu();
     SoundTrackSystem soundTrackSystem = new SoundTrackSystem();
     public void startGame() throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
-        soundTrackSystem.backgroundMusicSurvivalFirst();
         menu.mainMenu();
     }
 

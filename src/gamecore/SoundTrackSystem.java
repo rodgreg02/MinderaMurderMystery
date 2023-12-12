@@ -26,7 +26,15 @@ public class SoundTrackSystem {
         clip.loop(10);
         clip.start();
     }
+    public void heartBeatSound() throws LineUnavailableException, UnsupportedAudioFileException, IOException {
 
+        clip = AudioSystem.getClip();
+        File file = new File("resources/heartbeatSound.wav");
+        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
+        clip.open(audioInputStream);
+        clip.loop(10);
+        clip.start();
+    }
 
     public void policeSound() throws LineUnavailableException, UnsupportedAudioFileException, IOException {
 

@@ -20,7 +20,6 @@ public class Story {
                 \t-A policia também não consegue encontrar a arma do crime.
                 """;
 
-        printWithDelay(storyText);
         return storyText;
     }
 
