@@ -18,6 +18,7 @@ public class Game {
 
     Menu menu = new Menu();
     SoundTrackSystem soundTrackSystem = new SoundTrackSystem();
+
     public void startGame() throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
         ArrayList<Card> allClues = new ArrayList<>();
         ArrayList<Card> selectedClues = new ArrayList<>();
@@ -76,7 +77,6 @@ public class Game {
         }
         return selectedClues;
     }
-    
 
 
     static void finalEnd(Player player) {
@@ -117,25 +117,62 @@ public class Game {
         System.out.println("Where was the crime room?");
         System.out.print("=> ");
         String roomGuess = scan.next();
-}
-  
-  public static void charactersEnding() {
-        System.out.print("It was during the night that ");
+
+        charactersEnding(nameGuess, weaponGuess, roomGuess);
+    }
+
+    public static void charactersEnding(String nameGuess, String weaponGuess, String roomGuess) {
         int counter = 0;
-        boolean seeIfCounterMax = false;
-        for (int i = 0; i < 6; i++) {
-            if (Character.suspects.get(i).getWasUsedToKill()) {
-                System.out.print(Character.suspects.get(i).getName() + " used a ");
+
+        if (counter >= 3) {
+            System.out.print("It was during the night that ");
+            for (int i = 0; i < 6; i++) {
+                if (Character.suspects.contains(nameGuess) && Character.suspects.get(i).getWasUsedToKill()) {
+                    String onlyName = Character.suspects.get(i).getName().substring(0, Character.suspects.get(i).getName().indexOf("'s"));
+                    System.out.print(onlyName + " used a ");
+                    counter++;
+                }
             }
-            if (Weapon.arrayListWeapons.get(i).getWasUsedToKill()) {
-                System.out.print(Weapon.arrayListWeapons.get(i).getName() + " to kill Flávio in the ");
+
+            for (int i = 0; i < Weapon.arrayListWeapons.size(); i++) {
+                if (Weapon.arrayListWeapons.contains(weaponGuess) && Weapon.arrayListWeapons.get(i).getWasUsedToKill()) {
+                    System.out.print(Weapon.arrayListWeapons.get(i).getName() + " to kill Flávio in the ");
+                    counter++;
+                }
             }
+
+            for (int i = 0; i < Room.rooms.size(); i++) {
+                if (Room.rooms.contains(roomGuess) && Room.rooms.get(i).getWasUsedToKill()) {
+
+                    System.out.print(Room.rooms.get(i).getName());
+                    counter++;
+                }
+            }
+            System.out.println();
+            System.out.println("Your awnser is right");
+            System.exit(0);
+        } else {
+            System.out.println("Your awnser is wrong, and the true killer kill you in the pool.");
+            System.out.println();
+            for (int i = 0; i < Character.suspects.size(); i++) {
+                if (Character.suspects.get(i).getWasUsedToKill()) {
+                    String onlyName = Character.suspects.get(i).getName().substring(0, Character.suspects.get(i).getName().indexOf("'s"));
+                    System.out.print(onlyName + " used a ");
+                }
+            }
+            for (int i = 0; i < Weapon.arrayListWeapons.size(); i++) {
+                if (Weapon.arrayListWeapons.get(i).getWasUsedToKill()) {
+                    System.out.print(Weapon.arrayListWeapons.get(i).getName() + " to kill Flávio in the ");
+                }
+            }
+
+            for (int i = 0; i < Room.rooms.size(); i++) {
+                if (Room.rooms.get(i).getWasUsedToKill()) {
+                    System.out.print(Room.rooms.get(i).getName());
+                }
+            }
+            System.out.println();
+            System.exit(0);
         }
-        for (int i = 0; i < Room.rooms.size(); i++) {
-            if(Room.rooms.get(i).getWasUsedToKill()){
-                System.out.print(Room.rooms.get(i).getName());
-            }
-        }
-        System.out.println();
     }
 }
