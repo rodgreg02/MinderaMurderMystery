@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.SortedMap;
+
 
 public class Game {
     static Scanner scan = new Scanner(System.in);
@@ -114,9 +114,11 @@ public class Game {
         System.out.println("What weapon was used?");
         System.out.print("=> ");
         String weaponGuess = scan.next();
+
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Where was the crime room?");
         System.out.print("=> ");
-        String roomGuess = scan.next();
+        String roomGuess = scanner.nextLine();
 
         charactersEnding(nameGuess, weaponGuess, roomGuess);
     }
@@ -127,7 +129,7 @@ public class Game {
         if (counter >= 3) {
             System.out.print("It was during the night that ");
             for (int i = 0; i < 6; i++) {
-                if (Character.suspects.contains(nameGuess) && Character.suspects.get(i).getWasUsedToKill()) {
+                if (Character.suspects.get(i).getWasUsedToKill() && Character.suspects.get(i).getName().contains(nameGuess)) {
                     String onlyName = Character.suspects.get(i).getName().substring(0, Character.suspects.get(i).getName().indexOf("'s"));
                     System.out.print(onlyName + " used a ");
                     counter++;
@@ -135,23 +137,24 @@ public class Game {
             }
 
             for (int i = 0; i < Weapon.arrayListWeapons.size(); i++) {
-                if (Weapon.arrayListWeapons.contains(weaponGuess) && Weapon.arrayListWeapons.get(i).getWasUsedToKill()) {
+                if (Weapon.arrayListWeapons.get(i).getName().contains(weaponGuess) && Weapon.arrayListWeapons.get(i).getWasUsedToKill()) {
                     System.out.print(Weapon.arrayListWeapons.get(i).getName() + " to kill Flávio in the ");
                     counter++;
                 }
             }
 
             for (int i = 0; i < Room.rooms.size(); i++) {
-                if (Room.rooms.contains(roomGuess) && Room.rooms.get(i).getWasUsedToKill()) {
-
+                if (Room.rooms.get(i).getName().contains(roomGuess) && Room.rooms.get(i).getWasUsedToKill()) {
                     System.out.print(Room.rooms.get(i).getName());
                     counter++;
                 }
             }
+
             System.out.println();
             System.out.println("Your awnser is right");
             System.exit(0);
         } else {
+
             System.out.println("Your awnser is wrong, and the true killer kill you in the pool.");
             System.out.println();
             for (int i = 0; i < Character.suspects.size(); i++) {
@@ -173,6 +176,8 @@ public class Game {
             }
             System.out.println();
             System.exit(0);
+
         }
     }
 }
+
