@@ -1,6 +1,7 @@
 package gamecore;
 
 import characters.Character;
+import room.Room;
 import weapon.Weapon;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -12,9 +13,21 @@ import java.util.Scanner;
 
 public class Game {
     static Scanner scan = new Scanner(System.in);
+
     Menu menu = new Menu();
     SoundTrackSystem soundTrackSystem = new SoundTrackSystem();
     public void startGame() throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
+        ArrayList<Card> allClues = new ArrayList<>();
+        ArrayList<Card> selectedClues = new ArrayList<>();
+        Room.createMap();
+        Room.chooseRandomRoomKill();
+        Character.createCharacters();
+        Character.chooseRandomCharacterKill();
+        allClues.addAll(Character.suspects);
+        Weapon.createWeapons();
+        Game.chooseRandomWeaponKill();
+        allClues.addAll(Weapon.arrayListWeapons);
+        Room.distributeClues(allClues);
         menu.mainMenu();
     }
 
