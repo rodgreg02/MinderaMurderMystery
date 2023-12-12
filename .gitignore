@@ -30,9 +30,9 @@
 MinderaMurderMystery.iml
 .idea/codeStyles/Project.xml
 
-# AWS User-specific
 .idea/**/aws.xml
 .idea/codeStyles/codeStyleConfig.xml
+# AWS User-specific src/MinderaMurderMystery.iml
 
 
 # Generated files
