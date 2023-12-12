@@ -26,28 +26,18 @@ public class Render {
 
         for (row = 0; row < rows; row++) {
 
-            for (col = 0; col < cols; col++) {
-                System.out.print("+----------+");
-            }
-            System.out.println();
-
+            System.out.println("+-----------------------------------------------------------+");
 
             for (col = 0; col < cols; col++) {
                 int currentIndex = (row * cols) + col;
                 if (currentIndex < size) {
                     String roomName = rooms[currentIndex].getName();
-                    System.out.printf("|  %-8s", roomName);
-                } else {
-                    System.out.print("|        ");
+                    System.out.print("|\t" + String.format("%-15s", roomName));
                 }
             }
-            System.out.println("|");
+            System.out.println(" |");
 
-            // Print lower horizontal row
-            for (col = 0; col < cols; col++) {
-                System.out.print("+----------+");
-            }
-            System.out.println();
+            System.out.println("+-----------------------------------------------------------+");
         }
     }
 
@@ -69,7 +59,7 @@ public class Render {
         System.out.println("------------");
     }
 
-    public static void printStory(String stringToPrint){
+    public static void printStory(String stringToPrint) {
         for (int i = 0; i < stringToPrint.length(); i++) {
             char letter = stringToPrint.charAt(i);
 
