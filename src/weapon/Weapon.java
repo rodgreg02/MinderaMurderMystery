@@ -32,10 +32,6 @@ public class Weapon extends Card {
 
    public static ArrayList<Weapon> arrayListWeapons = new ArrayList<>();
 
-
-
-
-
     public static void createWeapons() {
         Weapon knife = new Weapon("Knife",
                 "The knife, with traces of dried blood, was hidden behind some books on the shelf.",
