@@ -30,14 +30,11 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             Game game = new Game();
             Timestamp start = Timestamp.from(Instant.now());
-            game.startGame();
+            //game.startGame();
+            Thread.sleep(1000);
             Timestamp end = Timestamp.from(Instant.now());
             long totalTime = end.getTime() - start.getTime();
-            long seconds = totalTime / 1_000;
-            long minutes = seconds / 60;
-            seconds = seconds % 60;
-
-            String formattedDuration = String.format("%02d:%02d", minutes, seconds);
+            String formattedDuration = WriteableFormat.formatTime(totalTime);
             System.out.println("You took: " + formattedDuration + " to solve the crime");
             System.out.println("Insert your name for the leaderboard!");
             WriteableFormat playerScore = new WriteableFormat( scanner.next(),totalTime);
@@ -47,7 +44,7 @@ public class Main {
                     .collect(Collectors.toList());
             fm.writeDatabase(playerScore.toString());
             leaderboard.stream()
-                    .forEach(System.out::println);
+                    .forEach((e) -> System.out.println(e.getName()+ "-" + WriteableFormat.formatTime(e.getTime())));
 
 
         } catch (Exception e) {
