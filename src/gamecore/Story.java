@@ -11,8 +11,8 @@ public class Story {
         System.out.println("\t\t\t\t\tMindera Murder Mystery");
 
         String storyText = """
-                \t The detective""" + " " + player.getName() + """
-                \tis called to investigate Flávio's murder.\s 
+                \t The detective""" + " " + player.getName() + """ 
+                 is called to investigate Flávio's murder.\s 
                 \tAt the crime scene, he finds an almost empty jar of Nutella, intriguing him.\s 
                 \tDuring the investigation, it is discovered that Flávio had the habit of enjoying Nutella before going to sleep.\s
                 \n
@@ -36,14 +36,5 @@ public class Story {
             e.printStackTrace();
         }
         soundTrackSystem.stop();
-    }
-
-    static void goodEnding() {
-        System.out.println("\tGraças a ti a policia encontrou o assassino, a arma, e o local do crime.");
-    }
-
-    static void badEnding() {
-        System.out.println("\tPor tua causa policia prendeu uma pessoa inocente.");
-        System.out.println("\tO verdadeiro culpado matou-o na piscina da casa.");
     }
 }
