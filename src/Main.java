@@ -13,10 +13,7 @@ import java.io.IOException;
 import java.security.cert.CRLReason;
 import java.sql.Timestamp;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -39,7 +36,7 @@ public class Main {
             WriteableFormat playerScore = new WriteableFormat(scanner.next(), totalTime);
             leaderboard.add(playerScore);
             leaderboard = leaderboard.stream()
-                    .sorted((e1, e2) -> e1.getTime().compareTo(e2.getTime()))
+                    .sorted(Comparator.comparing(WriteableFormat::getTime))
                     .collect(Collectors.toList());
             fm.writeDatabase(playerScore.toString());
             leaderboard.stream()
