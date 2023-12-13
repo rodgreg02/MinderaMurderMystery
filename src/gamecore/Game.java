@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 
 public class Game {
@@ -122,70 +123,61 @@ public class Game {
     }
 
     public static void charactersEnding(String nameGuess, String weaponGuess, String roomGuess) {
-        int counter = 0;
         // to increse counter if user insert correct awnser
-        for (int i = 0; i < Character.suspects.size(); i++) {
-            if (Character.suspects.get(i).getName().toLowerCase().contains(nameGuess) && Character.suspects.get(i).getWasUsedToKill()) {
-                counter++;
-            }
-        }
+        long counter = Character.suspects.stream()
+                .filter(e -> e.getName().toLowerCase().contains(nameGuess) && e.getWasUsedToKill())
+                .count()
+                +
+                Weapon.arrayListWeapons.stream()
+                        .filter(e -> e.getName().toLowerCase().contains(weaponGuess) && e.getWasUsedToKill())
+                        .count()
+                +
+                Room.rooms.stream()
+                        .filter(e -> e.getName().toLowerCase().contains(roomGuess) && e.getWasUsedToKill())
+                        .count();
 
-        for (int i = 0; i < Weapon.arrayListWeapons.size(); i++) {
-            if (Weapon.arrayListWeapons.get(i).getName().toLowerCase().contains(weaponGuess) && Weapon.arrayListWeapons.get(i).getWasUsedToKill()) {
-                counter++;
-            }
-        }
-
-        for (int i = 0; i < Room.rooms.size(); i++) {
-            if (Room.rooms.get(i).getName().toLowerCase().contains(roomGuess) && Room.rooms.get(i).getWasUsedToKill()) {
-                counter++;
-            }
-        }
         //
         System.out.println();
         if (counter == 3) {
             System.out.println("Your awnser is right");
-            for (int i = 0; i < Character.suspects.size(); i++) {
-                if (Character.suspects.get(i).getWasUsedToKill()) {
-                    String onlyName = Character.suspects.get(i).getName().substring(0, Character.suspects.get(i).getName().indexOf("'s"));
-                    System.out.print(onlyName + " used a ");
-                }
-            }
-            for (int i = 0; i < Weapon.arrayListWeapons.size(); i++) {
-                if (Weapon.arrayListWeapons.get(i).getWasUsedToKill()) {
-                    System.out.print(Weapon.arrayListWeapons.get(i).getName() + " to kill Flávio in the ");
-                }
-            }
+            //-----------------
+            String onlyName = Character.suspects.stream()
+                    .filter(Character::getWasUsedToKill) //.filter(e -> e.getWasUsedToKill())
+                    .map(e -> e.getName().substring(0, e.getName().indexOf("'s")))
+                    .collect(Collectors.joining(" "));
 
-            for (int i = 0; i < Room.rooms.size(); i++) {
-                if (Room.rooms.get(i).getWasUsedToKill()) {
-                    System.out.print(Room.rooms.get(i).getName());
-                }
-            }
+            String onlyWeapon = Weapon.arrayListWeapons.stream()
+                    .filter(e -> e.getWasUsedToKill())
+                    .map(e -> e.getName())
+                    .collect(Collectors.joining(" "));
+
+            String onlyRoom = Room.rooms.stream()
+                    .filter(e -> e.getWasUsedToKill())
+                    .map(e -> e.getName())
+                    .collect(Collectors.joining(" "));
+            System.out.println(onlyName + " used a" + onlyWeapon + "to kill Flávio in the" + onlyRoom + ".");
             System.exit(0);
 
         } else {
             System.out.println("Your awnser is wrong, and the true killer kill you in the pool.");
             System.out.println();
-            for (int i = 0; i < Character.suspects.size(); i++) {
-                if (Character.suspects.get(i).getWasUsedToKill()) {
-                    String onlyName = Character.suspects.get(i).getName().substring(0, Character.suspects.get(i).getName().indexOf("'s"));
-                    System.out.print(onlyName + " used a ");
-                }
-            }
-            for (int i = 0; i < Weapon.arrayListWeapons.size(); i++) {
-                if (Weapon.arrayListWeapons.get(i).getWasUsedToKill()) {
-                    System.out.print(Weapon.arrayListWeapons.get(i).getName() + " to kill Flávio in the ");
-                }
-            }
+            String onlyName = Character.suspects.stream()
+                    .filter(Character::getWasUsedToKill) //.filter(e -> e.getWasUsedToKill())
+                    .map(e -> e.getName().substring(0, e.getName().indexOf("'s")))
+                    .collect(Collectors.joining(" "));
 
-            for (int i = 0; i < Room.rooms.size(); i++) {
-                if (Room.rooms.get(i).getWasUsedToKill()) {
-                    System.out.print(Room.rooms.get(i).getName());
-                }
-            }
-            System.out.println();
+            String onlyWeapon = Weapon.arrayListWeapons.stream()
+                    .filter(e -> e.getWasUsedToKill())
+                    .map(e -> e.getName())
+                    .collect(Collectors.joining(" "));
+
+            String onlyRoom = Room.rooms.stream()
+                    .filter(e -> e.getWasUsedToKill())
+                    .map(e -> e.getName())
+                    .collect(Collectors.joining(" "));
+            System.out.println(onlyName + " used a " + onlyWeapon + " to kill Flávio in the " + onlyRoom + ".");
             System.exit(0);
+
         }
     }
 }
