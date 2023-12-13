@@ -114,9 +114,12 @@ public class Game {
         System.out.println("What weapon was used?");
         System.out.print("=> ");
         String weaponGuess = scan.next();
+
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Where was the crime room?");
         System.out.print("=> ");
-        String roomGuess = scan.next();
+        String roomGuess = scanner.nextLine();
+
 
         charactersEnding(nameGuess, weaponGuess, roomGuess);
     }
