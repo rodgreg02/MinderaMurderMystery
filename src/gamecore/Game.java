@@ -124,7 +124,7 @@ public class Game {
     public static void charactersEnding(String nameGuess, String weaponGuess, String roomGuess) {
         int counter = 0;
         System.out.println(nameGuess + weaponGuess + roomGuess);
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < Character.suspects.size(); i++) {
             if (Character.suspects.get(i).getName().toLowerCase().contains(nameGuess) && Character.suspects.get(i).getWasUsedToKill()) {
                 counter++;
             }

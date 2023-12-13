@@ -27,19 +27,25 @@ public class Menu {
             System.out.println("==== Welcome to MinderaMurderMystery Game ====");
             System.out.println("1 => Play");
             System.out.println("2 => Rules");
-            System.out.println("3 => Exit");
+            System.out.println("3 => LeaderBoard");
+            System.out.println("0 => Exit");
             String option = scan.next();
-            if (option.equals("1")) {
-                storyMenu();
-            }
-            if (option.equals("2")) {
-                showRules();
-            }
-            if (option.equals("3")) {
-                quitGame = true;
-            }
-            if (!option.equals("1") && !option.equals("2") && !option.equals("3")) {
-                System.out.println("Invalid Input");
+
+            switch (option){
+                case "0":
+                    System.out.println("Exiting");
+                    quitGame = true;
+                    break;
+                case "1":
+                    storyMenu();
+                    break;
+                case "2":
+                    showRules();
+                    break;
+                case "3":
+                    break;
+                default:
+                    System.out.println("Invalid Input");
             }
         }
     }
