@@ -1,11 +1,19 @@
 package file;
 
 public class WriteableFormat {
-    String time;
+    Long time;
     String name;
 
-    public WriteableFormat(String time, String name) {
-        this.time = time;
+    public WriteableFormat( String name,Long time) {
         this.name = name;
+        this.time = time;
+    }
+
+    public Long getTime() {
+        return time;
+    }
+
+    public String toString(){
+        return this.name + "-" + this.time;
     }
 }

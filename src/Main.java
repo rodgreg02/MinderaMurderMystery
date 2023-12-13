@@ -1,5 +1,6 @@
 import characters.Character;
 import characters.Player;
+import file.FileManager;
 import file.WriteableFormat;
 import gamecore.Card;
 import gamecore.Game;
@@ -13,17 +14,24 @@ import java.security.cert.CRLReason;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
 
     public static void main(String[] args) {
         try {
+
+            FileManager fm = new FileManager();
+            fm.createFile();
+            List<WriteableFormat> leaderboard = fm.readDatabase();
             Scanner scanner = new Scanner(System.in);
             Game game = new Game();
-            Timestamp start= Timestamp.from(Instant.now());
+            Timestamp start = Timestamp.from(Instant.now());
             game.startGame();
-            Timestamp end= Timestamp.from(Instant.now());
+            Timestamp end = Timestamp.from(Instant.now());
             long totalTime = end.getTime() - start.getTime();
             long seconds = totalTime / 1_000;
             long minutes = seconds / 60;
@@ -31,10 +39,19 @@ public class Main {
 
             String formattedDuration = String.format("%02d:%02d", minutes, seconds);
             System.out.println("You took: " + formattedDuration + " to solve the crime");
-            WriteableFormat playerScore = new WriteableFormat(formattedDuration, scanner.next());
-            
+            System.out.println("Insert your name for the leaderboard!");
+            WriteableFormat playerScore = new WriteableFormat( scanner.next(),totalTime);
+            leaderboard.add(playerScore);
+            leaderboard = leaderboard.stream()
+                    .sorted((e1,e2) -> e2.getTime().compareTo(e1.getTime()))
+                    .collect(Collectors.toList());
+            fm.writeDatabase(playerScore.toString());
+            leaderboard.stream()
+                    .forEach(System.out::println);
+
+
         } catch (Exception e) {
-            System.out.println("AHHHHHHHHHHHHH");
+            System.out.println(e.getMessage());
         }
     }
 }
