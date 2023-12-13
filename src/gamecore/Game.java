@@ -123,7 +123,7 @@ public class Game {
 
     public static void charactersEnding(String nameGuess, String weaponGuess, String roomGuess) {
         int counter = 0;
-        System.out.println(nameGuess + weaponGuess + roomGuess);
+        // to increse counter if user insert correct awnser
         for (int i = 0; i < Character.suspects.size(); i++) {
             if (Character.suspects.get(i).getName().toLowerCase().contains(nameGuess) && Character.suspects.get(i).getWasUsedToKill()) {
                 counter++;
@@ -141,7 +141,7 @@ public class Game {
                 counter++;
             }
         }
-
+        //
         System.out.println();
         if (counter == 3) {
             System.out.println("Your awnser is right");

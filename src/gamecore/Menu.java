@@ -27,7 +27,6 @@ public class Menu {
             System.out.println("==== Welcome to MinderaMurderMystery Game ====");
             System.out.println("1 => Play");
             System.out.println("2 => Rules");
-            System.out.println("3 => LeaderBoard");
             System.out.println("0 => Exit");
             String option = scan.next();
 
@@ -41,8 +40,6 @@ public class Menu {
                     break;
                 case "2":
                     showRules();
-                    break;
-                case "3":
                     break;
                 default:
                     System.out.println("Invalid Input");
