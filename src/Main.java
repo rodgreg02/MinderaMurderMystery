@@ -33,21 +33,17 @@ public class Main {
             game.startGame();
             Timestamp end = Timestamp.from(Instant.now());
             long totalTime = end.getTime() - start.getTime();
-            long seconds = totalTime / 1_000;
-            long minutes = seconds / 60;
-            seconds = seconds % 60;
-
-            String formattedDuration = String.format("%02d:%02d", minutes, seconds);
+            String formattedDuration = WriteableFormat.formatTime(totalTime);
             System.out.println("You took: " + formattedDuration + " to solve the crime");
             System.out.println("Insert your name for the leaderboard!");
-            WriteableFormat playerScore = new WriteableFormat( scanner.next(),totalTime);
+            WriteableFormat playerScore = new WriteableFormat(scanner.next(), totalTime);
             leaderboard.add(playerScore);
             leaderboard = leaderboard.stream()
-                    .sorted((e1,e2) -> e2.getTime().compareTo(e1.getTime()))
+                    .sorted((e1, e2) -> e1.getTime().compareTo(e2.getTime()))
                     .collect(Collectors.toList());
             fm.writeDatabase(playerScore.toString());
             leaderboard.stream()
-                    .forEach(System.out::println);
+                    .forEach((e) -> System.out.println(e.getName() + "-" + WriteableFormat.formatTime(e.getTime())));
 
 
         } catch (Exception e) {
