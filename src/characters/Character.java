@@ -42,7 +42,7 @@ public class Character extends Card {
                 "The distinctive aroma of L&M cigarette hangs in the air, suggesting the culprit's habit.",
                 "The suspect claims to have had his pack of cigarettes stolen, indicating that others may have had access to the same type of cigarette.", false);
         Character fatima = new Character("Fátima's notes",
-                "The unique vocabulary used in the note matches the suspect's way of speaking, suggesting he may be the perpetrator." ,
+                "The unique vocabulary used in the note matches the suspect's way of speaking, suggesting she may be the perpetrator." ,
                 "Forensic analysis indicates differences in writing style, pointing to the possibility that more than one person contributed to the note.", false);
         Character paulo = new Character("Paulo's ping pong paddle",
                 "The racket exhibits signs of abnormal use, indicating that it was used in an unusual manner during the crime event.",

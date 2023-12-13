@@ -21,7 +21,6 @@ public class Main {
         try {
             Scanner scanner = new Scanner(System.in);
             Game game = new Game();
-            Player player = new Player(scanner.next());
             Timestamp start= Timestamp.from(Instant.now());
             game.startGame();
             Timestamp end= Timestamp.from(Instant.now());
