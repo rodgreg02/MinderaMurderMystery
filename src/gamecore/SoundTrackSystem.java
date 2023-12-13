@@ -26,24 +26,17 @@ public class SoundTrackSystem {
         clip.loop(10);
         clip.start();
     }
-    public void purgeSirenSound() throws LineUnavailableException, UnsupportedAudioFileException, IOException {
+
+    public void firstGameSound() throws LineUnavailableException, UnsupportedAudioFileException, IOException {
 
         clip = AudioSystem.getClip();
-        File file = new File("resources/purgeSirenSound.wav");
+        File file = new File("resources/firstGameSound.wav");
         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
         clip.open(audioInputStream);
         clip.loop(10);
         clip.start();
     }
-    public void heartBeatSound() throws LineUnavailableException, UnsupportedAudioFileException, IOException {
 
-        clip = AudioSystem.getClip();
-        File file = new File("resources/heartbeatSound.wav");
-        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
-        clip.open(audioInputStream);
-        clip.loop(10);
-        clip.start();
-    }
 
     public void policeSound() throws LineUnavailableException, UnsupportedAudioFileException, IOException {
 
@@ -54,15 +47,7 @@ public class SoundTrackSystem {
         clip.loop(10);
         clip.start();
     }
-    public void sirenPurgeSound() throws LineUnavailableException, UnsupportedAudioFileException, IOException {
 
-        clip = AudioSystem.getClip();
-        File file = new File("resources/sirenPurgeSound.wav");
-        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
-        clip.open(audioInputStream);
-        clip.loop(10);
-        clip.start();
-    }
     public void stop() {
         if (clip != null && clip.isRunning()) {
             clip.close();

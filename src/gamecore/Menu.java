@@ -15,12 +15,10 @@ public class Menu {
     Scanner scan = new Scanner(System.in);
     Player player;
     SoundTrackSystem soundTrackSystem1 = new SoundTrackSystem();
-    SoundTrackSystem soundTrackSystem2 = new SoundTrackSystem();
 
 
     public void mainMenu() throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
-        soundTrackSystem1.heartBeatSound();
-        soundTrackSystem2.purgeSirenSound();
+        soundTrackSystem1.firstGameSound();
 
         boolean quitGame = false;
         while (!quitGame) {
@@ -61,7 +59,6 @@ public class Menu {
         Thread.sleep(2000);
         soundTrackSystem.stop();
         soundTrackSystem1.stop();
-        soundTrackSystem2.stop();
         gameMenu(Room.rooms);
 
 
