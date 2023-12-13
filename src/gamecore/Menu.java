@@ -18,7 +18,6 @@ public class Menu {
     SoundTrackSystem soundTrackSystem2 = new SoundTrackSystem();
 
 
-
     public void mainMenu() throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
         soundTrackSystem1.heartBeatSound();
         soundTrackSystem2.purgeSirenSound();
@@ -27,15 +26,19 @@ public class Menu {
         while (!quitGame) {
             System.out.println("==== Welcome to MinderaMurderMystery Game ====");
             System.out.println("1 => Play");
-            System.out.println("2 => Exit");
+            System.out.println("2 => Rules");
+            System.out.println("3 => Exit");
             String option = scan.next();
             if (option.equals("1")) {
                 storyMenu();
             }
             if (option.equals("2")) {
+                showRules();
+            }
+            if (option.equals("3")) {
                 quitGame = true;
             }
-            if (!option.equals("1") && !option.equals("2")) {
+            if (!option.equals("1") && !option.equals("2") && !option.equals("3")) {
                 System.out.println("Invalid Input");
             }
         }
@@ -47,6 +50,7 @@ public class Menu {
         System.out.println("Insert the name of your detective: ");
         String detectiveName = scan.next();
         player = new Player(detectiveName);
+        cleanConsole();
         Render.drawMap(Room.rooms);
         Thread.sleep(5000);
         cleanConsole();
@@ -115,6 +119,15 @@ public class Menu {
         }
     }
 
+    private void showRules() {
+        System.out.println("Rules");
+        System.out.println("""
+                In this game there are 6 suspects, 6 suspected weapons and 9 locations to investigate.\s              
+                From the 5th room onwards you could go to the pool to give your final answer as to who is to blame.\s              
+                YOU ONLY HAVE ONE CHANCE.
+                """);
+    }
+
     private void walkToNextRoom(ArrayList<Room> rooms) throws InterruptedException {
         System.out.print("Walking.");
         Thread.sleep(1000);
@@ -134,7 +147,7 @@ public class Menu {
         try {
             rooms.get(currentPosition - 1);
             currentPosition--;
-        } catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             System.out.println("You abandoned the mission");
             System.exit(0);
         }

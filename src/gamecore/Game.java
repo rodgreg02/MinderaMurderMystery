@@ -110,34 +110,34 @@ public class Game {
         System.out.println("Your guess...");
         System.out.println("Who is the guilty (only name)");
         System.out.print("=> ");
-        String nameGuess = scan.next().trim();
+        String nameGuess = scan.next().toLowerCase().trim();
         System.out.println("What weapon was used?");
         System.out.print("=> ");
-        String weaponGuess = scan.next().trim();
+        String weaponGuess = scan.next().toLowerCase().trim();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Where was the crime room?");
         System.out.print("=> ");
-        String roomGuess = scanner.nextLine();
+        String roomGuess = scanner.nextLine().toLowerCase().trim();
         charactersEnding(nameGuess, weaponGuess, roomGuess);
     }
 
     public static void charactersEnding(String nameGuess, String weaponGuess, String roomGuess) {
         int counter = 0;
-
+        System.out.println(nameGuess + weaponGuess + roomGuess);
         for (int i = 0; i < 6; i++) {
-            if (Character.suspects.get(i).getWasUsedToKill() && Character.suspects.get(i).getName().contains(nameGuess)) {
+            if (Character.suspects.get(i).getName().toLowerCase().contains(nameGuess) && Character.suspects.get(i).getWasUsedToKill()) {
                 counter++;
             }
         }
 
         for (int i = 0; i < Weapon.arrayListWeapons.size(); i++) {
-            if (Weapon.arrayListWeapons.get(i).getName().contains(weaponGuess) && Weapon.arrayListWeapons.get(i).getWasUsedToKill()) {
+            if (Weapon.arrayListWeapons.get(i).getName().toLowerCase().contains(weaponGuess) && Weapon.arrayListWeapons.get(i).getWasUsedToKill()) {
                 counter++;
             }
         }
 
         for (int i = 0; i < Room.rooms.size(); i++) {
-            if (Room.rooms.get(i).getName().contains(roomGuess) && Room.rooms.get(i).getWasUsedToKill()) {
+            if (Room.rooms.get(i).getName().toLowerCase().contains(roomGuess) && Room.rooms.get(i).getWasUsedToKill()) {
                 counter++;
             }
         }
