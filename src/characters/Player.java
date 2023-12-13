@@ -60,6 +60,7 @@ public class Player {
         }
         System.out.println("== Detective Bag ==");
        detectiveBag.forEach(System.out::println);
+        System.out.println("===================");
     }
 
     public Player(String name) {
