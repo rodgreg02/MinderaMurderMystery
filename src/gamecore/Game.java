@@ -2,6 +2,7 @@ package gamecore;
 
 import characters.Character;
 import characters.Player;
+import com.sun.tools.javac.Main;
 import room.Room;
 import weapon.Weapon;
 
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 
 public class Game {
     static public boolean solveGame = false;
+    static public boolean gameOver = false;
     static Scanner scan = new Scanner(System.in);
 
     Menu menu = new Menu();
@@ -141,6 +143,7 @@ public class Game {
         System.out.println();
         if (counter == 3) {
             solveGame = true;
+            gameOver = true;
             System.out.println("Your awnser is right");
             //-----------------
             String onlyName = Character.suspects.stream()
@@ -157,8 +160,7 @@ public class Game {
                     .filter(e -> e.getWasUsedToKill())
                     .map(e -> e.getName())
                     .collect(Collectors.joining(" "));
-            System.out.println(onlyName + " used a" + onlyWeapon + "to kill Flávio in the" + onlyRoom + ".");
-            System.exit(0);
+            System.out.println(onlyName + " used a " + onlyWeapon + " to kill Flávio in the " + onlyRoom + ".");
 
         } else {
             System.out.println("Your awnser is wrong, and the true killer kill you in the pool.");
@@ -178,8 +180,7 @@ public class Game {
                     .map(e -> e.getName())
                     .collect(Collectors.joining(" "));
             System.out.println(onlyName + " used a " + onlyWeapon + " to kill Flávio in the " + onlyRoom + ".");
-            System.exit(0);
-
+            gameOver = true;
         }
     }
 }
