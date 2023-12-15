@@ -2,6 +2,7 @@ package gamecore;
 
 import characters.CharactersEnding;
 import characters.Player;
+import com.sun.tools.javac.Main;
 import room.Room;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -21,14 +22,14 @@ public class Menu {
         soundTrackSystem1.firstGameSound();
 
         boolean quitGame = false;
-        while (!quitGame) {
+        while (!quitGame && !Game.gameOver) {
             System.out.println("==== Welcome to MinderaMurderMystery Game ====");
             System.out.println("1 => Play");
             System.out.println("2 => Rules");
             System.out.println("0 => Exit");
             String option = scan.next();
 
-            switch (option){
+            switch (option) {
                 case "0":
                     System.out.println("Exiting");
                     quitGame = true;
@@ -53,15 +54,13 @@ public class Menu {
         player = new Player(detectiveName);
         cleanConsole();
         Render.drawMap(Room.rooms);
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         cleanConsole();
-        Story.printWithDelay(Story.startStory(player));
-        Thread.sleep(2000);
+        //Story.printWithDelay(Story.startStory(player));
+        //Thread.sleep(2000);
         soundTrackSystem.stop();
         soundTrackSystem1.stop();
         gameMenu(Room.rooms);
-
-
     }
 
 
@@ -69,13 +68,12 @@ public class Menu {
 
 
     private void gameMenu(ArrayList<Room> rooms) throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
-        SoundTrackSystem soundTrackSystem = new SoundTrackSystem();
 
+        SoundTrackSystem soundTrackSystem = new SoundTrackSystem();
         soundTrackSystem.backgroundMusicSurvivalFirst();
         Scanner scan = new Scanner(System.in);
-
         boolean leaveMission = false;
-        while (!leaveMission) {
+        while (!leaveMission && !Game.gameOver) {
 
             System.out.println("You are in " + rooms.get(currentPosition).getName());
             Render.drawRoom(rooms.get(currentPosition));
@@ -99,7 +97,7 @@ public class Menu {
                     break;
                 case "5":
                     scan.reset();
-                    checkIfPossibleGuess(option);
+                    checkIfPossibleGuess();
                     break;
                 case "0":
                     leaveMission = true;
@@ -154,11 +152,9 @@ public class Menu {
 
     }
 
-    private void checkIfPossibleGuess(String option) {
-        if (option.equals("5")) {
-            currentPosition = 8;
-            Game.finalEnd(player);
-        }
+    private void checkIfPossibleGuess() {
+        Game.finalEnd(player);
+
     }
 
     private void cleanConsole() {
