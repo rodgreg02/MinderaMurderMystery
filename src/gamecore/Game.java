@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 
 
 public class Game {
+    static public boolean solveGame = false;
     static Scanner scan = new Scanner(System.in);
 
     Menu menu = new Menu();
@@ -150,6 +151,7 @@ public class Game {
         //
         System.out.println();
         if (counter == 3) {
+            solveGame = true;
             System.out.println("Your awnser is right");
             //-----------------
             String onlyName = Character.suspects.stream()
