@@ -54,10 +54,10 @@ public class Menu {
         player = new Player(detectiveName);
         cleanConsole();
         Render.drawMap(Room.rooms);
-        //Thread.sleep(5000);
+        Thread.sleep(5000);
         cleanConsole();
-        //Story.printWithDelay(Story.startStory(player));
-        //Thread.sleep(2000);
+        Story.printWithDelay(Story.startStory(player));
+        Thread.sleep(2000);
         soundTrackSystem.stop();
         soundTrackSystem1.stop();
         gameMenu(Room.rooms);
