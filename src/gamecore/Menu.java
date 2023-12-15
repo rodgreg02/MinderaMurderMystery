@@ -27,6 +27,24 @@ public class Menu {
             System.out.println("1 => Play");
             System.out.println("2 => Rules");
             System.out.println("0 => Exit");
+            System.out.print("" +
+                    "\t\t\t\t\t\t\t\t                              x/^\\/^\\\n" +
+                    "\t\t\t\t\t\t\t\t                              \\----|\n" +
+                    "\t\t\t\t\t\t\t\t                          _---'---~~~~-_\n" +
+                    "\t\t\t\t\t\t\t\t                           ~~~|~~L~|~~~~\n" +
+                    "\t\t\t\t\t\t\t\t                              (/_  /~~--\n" +
+                    "\t\t\t\t\t\t\t\t                            \\~ \\  /  /~\n" +
+                    "\t\t\t\t\t\t\t\t                          __~\\  ~ /   ~~----,\n" +
+                    "\t\t\t\t\t\t\t\t                          \\    | |       /  \\\n" +
+                    "\t\t\t\t\t\t\t\t                          /|   |/       |    |\n" +
+                    "\t\t\t\t\t\t\t\t                          | | | o  o     /~   |\n" +
+                    "\t\t\t\t\t\t\t\t                        _-~_  |        ||  \\  /\n" +
+                    "\t\t\t\t\t\t\t\t                       (// )) | o  o    \\\\---'\n" +
+                    "\t\t\t\t\t\t\t\t                       //_- |  |          \\\n" +
+                    "\t\t\t\t\t\t\t\t                      //   |____|\\______\\__\\\n" +
+                    "\t\t\t\t\t\t\t\t                     ~      |   / |    |\n" +
+                    "\t\t\t\t\t\t\t\t                              |_ /   \\ _|\n" +
+                    "\t\t\t\t\t\t\t\t                            /~___|  /____\\");
             String option = scan.next();
 
             switch (option) {
@@ -134,6 +152,9 @@ public class Menu {
         System.out.print(".");
         rooms.get(currentPosition + 1);
         currentPosition++;
+        if(currentPosition == 8){
+            Game.finalEnd(player);
+        }
     }
 
     private void walkToPreviousRoom(ArrayList<Room> rooms) throws InterruptedException {
