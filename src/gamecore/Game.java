@@ -125,11 +125,11 @@ public class Game {
 
 
 
-        String weaponGuess = scan.next().toLowerCase().trim();
-        Scanner scanner = new Scanner(System.in);
+         weaponGuess = scan.next().toLowerCase().trim();
+         scanner = new Scanner(System.in);
         System.out.println("Where was the crime room?");
         System.out.print("=> ");
-        String roomGuess = scanner.nextLine().toLowerCase().trim();
+         roomGuess = scanner.nextLine().toLowerCase().trim();
 
         charactersEnding(nameGuess, weaponGuess, roomGuess);
     }
