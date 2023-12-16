@@ -13,10 +13,10 @@ public class Story {
         String storyText = """
                 \t The detective""" + " " + player.getName() + """ 
                  is called to investigate Flávio's murder.\s 
-                \tAt the crime scene, he finds an almost empty jar of Nutella, intriguing him.\s 
+                \tAt the crime scene, you find an almost empty jar of Nutella, intriguing you.\s 
                 \tDuring the investigation, it is discovered that Flávio had the habit of enjoying Nutella before going to sleep.\s
                 \n
-                \tAs he interviews the suspects, he uncovers a family secret and realizes that the jar of Nutella was the cause of everything...
+                \tAs he interviews the suspects, you uncovers a family secret and realizes that the jar of Nutella was the cause of everything...
                 """;
 
         return storyText;
