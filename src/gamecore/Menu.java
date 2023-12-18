@@ -45,6 +45,8 @@ public class Menu {
                     "\t\t\t\t\t\t\t\t                     ~      |   / |    |\n" +
                     "\t\t\t\t\t\t\t\t                              |_ /   \\ _|\n" +
                     "\t\t\t\t\t\t\t\t                            /~___|  /____\\");
+            System.out.println();
+            System.out.print("=>");
             String option = scan.next();
 
             switch (option) {
