@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 
 public class Game {
     static public boolean solveGame = false;
+    static public boolean gameOver = false;
     static Scanner scan = new Scanner(System.in);
 
     Menu menu = new Menu();
@@ -157,7 +158,7 @@ public class Game {
                     .filter(e -> e.getWasUsedToKill())
                     .map(e -> e.getName())
                     .collect(Collectors.joining(" "));
-            System.out.println(onlyName + " used a" + onlyWeapon + "to kill Flávio in the" + onlyRoom + ".");
+            System.out.println(onlyName + " used a " + onlyWeapon + " to kill Flávio in the " + onlyRoom + ".");
 
         } else {
             System.out.println("Your awnser is wrong, and the true killer kill you in the pool.");
@@ -177,7 +178,7 @@ public class Game {
                     .map(e -> e.getName())
                     .collect(Collectors.joining(" "));
             System.out.println(onlyName + " used a " + onlyWeapon + " to kill Flávio in the " + onlyRoom + ".");
-
+            gameOver = true;
         }
     }
 }
