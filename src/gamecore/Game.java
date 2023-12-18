@@ -158,7 +158,6 @@ public class Game {
                     .map(e -> e.getName())
                     .collect(Collectors.joining(" "));
             System.out.println(onlyName + " used a" + onlyWeapon + "to kill Flávio in the" + onlyRoom + ".");
-            System.exit(0);
 
         } else {
             System.out.println("Your awnser is wrong, and the true killer kill you in the pool.");
@@ -178,7 +177,6 @@ public class Game {
                     .map(e -> e.getName())
                     .collect(Collectors.joining(" "));
             System.out.println(onlyName + " used a " + onlyWeapon + " to kill Flávio in the " + onlyRoom + ".");
-            System.exit(0);
 
         }
     }

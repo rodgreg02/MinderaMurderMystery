@@ -179,7 +179,6 @@ public class Menu {
 
     private void checkIfPossibleGuess(String option) {
         if (option.equals("5")) {
-            currentPosition = 8;
             Game.finalEnd(player);
         }
     }
