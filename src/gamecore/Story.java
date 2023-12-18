@@ -16,7 +16,7 @@ public class Story {
                 \tAt the crime scene, you find an almost empty jar of Nutella, intriguing you.\s 
                 \tDuring the investigation, it is discovered that Flávio had the habit of enjoying Nutella before going to sleep.\s
                 \n
-                \tAs he interviews the suspects, you uncovers a family secret and realizes that the jar of Nutella was the cause of everything...
+                \tAs you interview the suspects, you uncover a family secret and realize that the jar of Nutella was the cause of everything...
                 """;
 
         return storyText;
