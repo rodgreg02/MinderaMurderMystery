@@ -28,7 +28,22 @@ public class Leaderboard {
                 .sorted((e1, e2) -> e2.getTime().compareTo(e1.getTime()))
                 .collect(Collectors.toList());
         fm.writeDatabase(playerScore.toString());
-        leaderboard.stream()
-                .forEach(System.out::println);
+        leaderboard.forEach(Leaderboard::printResultFormatted);
+    }
+
+    private static void printResultFormatted(WriteableFormat writeableFormat) {
+        long seconds = writeableFormat.getTime() / 1_000;
+        long minutes = seconds / 60;
+        seconds = seconds % 60;
+        String formattedDuration = String.format("%02d:%02d - %s", minutes, seconds, writeableFormat.getName());
+        System.out.println();
+    }
+
+    static protected void printResultFormatted(long time){
+        long seconds = time / 1_000;
+        long minutes = seconds / 60;
+        seconds = seconds % 60;
+        String formattedDuration = String.format("%02d:%02d", minutes, seconds);
+        System.out.println();
     }
 }
