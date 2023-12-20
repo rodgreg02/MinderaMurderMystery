@@ -125,7 +125,6 @@ public class Game {
     }
 
     public static void charactersEnding(String nameGuess, String weaponGuess, String roomGuess) {
-        // to increse counter if user insert correct awnser
         long counter = Character.suspects.stream()
                 .filter(e -> e.getName().toLowerCase().contains(nameGuess) && e.getWasUsedToKill())
                 .count()
