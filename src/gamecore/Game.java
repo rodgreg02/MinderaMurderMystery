@@ -125,16 +125,19 @@ public class Game {
     }
 
     public static void charactersEnding(String nameGuess, String weaponGuess, String roomGuess) {
-        long counter = Character.suspects.stream()
-                .filter(e -> e.getName().toLowerCase().contains(nameGuess) && e.getWasUsedToKill())
+
+        // to increse counter if user insert correct awnser
+        long counter =
+                Character.suspects.stream()
+                .filter(characterName -> characterName.getName().toLowerCase().contains(nameGuess) && characterName.getWasUsedToKill())
                 .count()
                 +
                 Weapon.arrayListWeapons.stream()
-                        .filter(e -> e.getName().toLowerCase().contains(weaponGuess) && e.getWasUsedToKill())
+                        .filter(weaponName -> weaponName.getName().toLowerCase().contains(weaponGuess) && weaponName.getWasUsedToKill())
                         .count()
                 +
                 Room.rooms.stream()
-                        .filter(e -> e.getName().toLowerCase().contains(roomGuess) && e.getWasUsedToKill())
+                        .filter(roomName -> roomName.getName().toLowerCase().contains(roomGuess) && roomName.getWasUsedToKill())
                         .count();
 
         //
@@ -149,13 +152,13 @@ public class Game {
                     .collect(Collectors.joining(" "));
 
             String onlyWeapon = Weapon.arrayListWeapons.stream()
-                    .filter(e -> e.getWasUsedToKill())
-                    .map(e -> e.getName())
+                    .filter(Card::getWasUsedToKill)
+                    .map(Card::getName)
                     .collect(Collectors.joining(" "));
 
             String onlyRoom = Room.rooms.stream()
-                    .filter(e -> e.getWasUsedToKill())
-                    .map(e -> e.getName())
+                    .filter(Card::getWasUsedToKill)
+                    .map(Card::getName)
                     .collect(Collectors.joining(" "));
             System.out.println(onlyName + " used a " + onlyWeapon + " to kill Flávio in the " + onlyRoom + ".");
 
@@ -168,13 +171,13 @@ public class Game {
                     .collect(Collectors.joining(" "));
 
             String onlyWeapon = Weapon.arrayListWeapons.stream()
-                    .filter(e -> e.getWasUsedToKill())
-                    .map(e -> e.getName())
+                    .filter(Card::getWasUsedToKill)
+                    .map(Card::getName)
                     .collect(Collectors.joining(" "));
 
             String onlyRoom = Room.rooms.stream()
-                    .filter(e -> e.getWasUsedToKill())
-                    .map(e -> e.getName())
+                    .filter(Card::getWasUsedToKill)
+                    .map(Card::getName)
                     .collect(Collectors.joining(" "));
             System.out.println(onlyName + " used a " + onlyWeapon + " to kill Flávio in the " + onlyRoom + ".");
             gameOver = true;
