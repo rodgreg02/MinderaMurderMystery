@@ -54,6 +54,7 @@ public class Player {
             detectiveBag.add(room.getClues().getName() + " - " + room.getClueObject());
         } else {
             System.out.println("Already have this object in your bag!!");
+
         }
     }
 
