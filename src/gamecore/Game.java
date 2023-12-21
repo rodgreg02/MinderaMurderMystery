@@ -144,6 +144,7 @@ public class Game {
         System.out.println();
         if (counter == 3) {
             solveGame = true;
+            gameOver = true;
             System.out.println("Your awnser is right");
             //-----------------
             String onlyName = Character.suspects.stream()

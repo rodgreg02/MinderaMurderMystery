@@ -36,14 +36,6 @@ public class Leaderboard {
         long minutes = seconds / 60;
         seconds = seconds % 60;
         String formattedDuration = String.format("%02d:%02d - %s", minutes, seconds, writeableFormat.getName());
-        System.out.println();
-    }
-
-    static protected void printResultFormatted(long time){
-        long seconds = time / 1_000;
-        long minutes = seconds / 60;
-        seconds = seconds % 60;
-        String formattedDuration = String.format("%02d:%02d", minutes, seconds);
-        System.out.println();
+        System.out.println(formattedDuration);
     }
 }
