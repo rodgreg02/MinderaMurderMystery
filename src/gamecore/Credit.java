@@ -25,7 +25,7 @@ public class Credit extends JPanel implements ActionListener {
             textArea = new JTextArea(introText);
             textArea.setForeground(Color.WHITE);
             textArea.setBackground(Color.BLACK);
-            textArea.setFont(new Font("Serif", Font.BOLD, 36));
+            textArea.setFont(new Font("Serif", Font.BOLD, 48));
             textArea.setEditable(false);
             textArea.setLineWrap(true);
             textArea.setWrapStyleWord(true);
@@ -41,7 +41,7 @@ public class Credit extends JPanel implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            textYCoordinate -= textSpeed; // Move text upward
+            textYCoordinate -= textSpeed;
             repaint();
 
 
