@@ -81,6 +81,8 @@ public class Menu {
         soundTrackSystem.stop();
         soundTrackSystem1.stop();
         gameMenu(Room.rooms);
+
+
     }
 
 
@@ -88,10 +90,11 @@ public class Menu {
 
 
     private void gameMenu(ArrayList<Room> rooms) throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
-
         SoundTrackSystem soundTrackSystem = new SoundTrackSystem();
+
         soundTrackSystem.backgroundMusicSurvivalFirst();
         Scanner scan = new Scanner(System.in);
+
         boolean leaveMission = false;
         while (!leaveMission && !Game.gameOver) {
 
@@ -116,8 +119,10 @@ public class Menu {
                     player.checkInventory();
                     break;
                 case "5":
-                    scan.reset();
-                    checkIfPossibleGuess();
+                    if(currentPosition>=5) {
+                        scan.reset();
+                        checkIfPossibleGuess(option);
+                    }
                     break;
                 case "0":
                     leaveMission = true;
@@ -175,9 +180,11 @@ public class Menu {
 
     }
 
-    private void checkIfPossibleGuess() {
-        Game.finalEnd(player);
-
+    private void checkIfPossibleGuess(String option) {
+        if (option.equals("5")) {
+            currentPosition = 8;
+            Game.finalEnd(player);
+        }
     }
 
     private void cleanConsole() {

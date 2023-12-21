@@ -2,7 +2,6 @@ package gamecore;
 
 import characters.Character;
 import characters.Player;
-import com.sun.tools.javac.Main;
 import room.Room;
 import weapon.Weapon;
 
@@ -126,6 +125,7 @@ public class Game {
     }
 
     public static void charactersEnding(String nameGuess, String weaponGuess, String roomGuess) {
+
         // to increse counter if user insert correct awnser
         long counter =
                 Character.suspects.stream()
