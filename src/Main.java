@@ -33,7 +33,6 @@ public class Main {
                 Timestamp end = Timestamp.from(Instant.now());
                 Leaderboard.finalLeader(start,end);
             }
-            Thread.sleep(2000);
             Credit.playCredit();
         } catch (Exception e) {
             System.out.println(e.getMessage());
